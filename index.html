@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vidamin Store - Coming Soon</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+            rel="stylesheet">
+        <style>
+            :root {
+                --primary: #f8b400;
+                --secondary: #ff6b6b;
+                --dark: #1a1a2e;
+                --darker: #121212;
+                --light: #e6e6e6;
+                --peanut-butter: #d4a76a;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            body {
+                background-color: var(--dark);
+                color: var(--light);
+                overflow-x: hidden;
+                background-image:
+                    url('https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?q=80&w=1000'),
+                    radial-gradient(circle at 25% 25%, rgba(248, 180, 0, 0.15) 0%, transparent 50%),
+                    radial-gradient(circle at 75% 75%, rgba(255, 107, 107, 0.15) 0%, transparent 50%);
+                background-size: cover;
+                background-blend-mode: overlay;
+                background-attachment: fixed;
+                position: relative;
+            }
+
+            body::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.7);
+                z-index: -1;
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 2rem;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                z-index: 1;
+            }
+
+            .logo {
+                width: 180px;
+                height: 180px;
+                margin-bottom: 2rem;
+                animation: pulse 2s infinite alternate, float 4s ease-in-out infinite;
+                border-radius: 50%;
+                background: linear-gradient(145deg, var(--darker), var(--dark));
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 3px solid var(--primary);
+                position: relative;
+                overflow: hidden;
+                transition: all 0.5s ease;
+            }
+
+            .logo:hover {
+                transform: scale(1.05);
+                box-shadow: 0 15px 40px rgba(248, 180, 0, 0.4);
+            }
+
+            .logo::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: url('https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?q=80&w=1000') center/cover;
+                opacity: 0.3;
+                z-index: -1;
+            }
+
+            .logo i {
+                font-size: 5rem;
+                color: var(--primary);
+                text-shadow: 0 0 10px rgba(248, 180, 0, 0.5);
+            }
+
+            h1 {
+                font-size: 4rem;
+                margin-bottom: 1.5rem;
+                text-align: center;
+                background: linear-gradient(to right, var(--primary), var(--secondary));
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+                animation: fadeIn 1.5s ease-in-out, glow 2s infinite alternate;
+            }
+
+            .highlight {
+                font-weight: 700;
+                color: var(--primary);
+                position: relative;
+                display: inline-block;
+            }
+
+            .highlight::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background: var(--peanut-butter);
+                transform: scaleX(0);
+                transform-origin: right;
+                transition: transform 0.3s ease;
+            }
+
+            .highlight:hover::after {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+
+            p {
+                font-size: 1.3rem;
+                margin-bottom: 1.5rem;
+                text-align: center;
+                max-width: 700px;
+                line-height: 1.6;
+                opacity: 0.9;
+            }
+
+            .countdown {
+                display: flex;
+                justify-content: center;
+                gap: 1.5rem;
+                margin: 3rem 0;
+                flex-wrap: wrap;
+                perspective: 1000px;
+            }
+
+            .countdown-item {
+                background: linear-gradient(145deg, var(--darker), var(--dark));
+                padding: 2rem 1.5rem;
+                border-radius: 15px;
+                min-width: 120px;
+                text-align: center;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+                border: 1px solid rgba(248, 180, 0, 0.3);
+                transition: all 0.5s ease;
+                transform-style: preserve-3d;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .countdown-item::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(45deg, transparent, rgba(248, 180, 0, 0.1), transparent);
+                transform: translateX(-100%);
+                transition: transform 0.6s ease;
+            }
+
+            .countdown-item:hover {
+                transform: translateY(-10px) rotateY(10deg);
+                box-shadow: 0 15px 40px rgba(248, 180, 0, 0.3);
+            }
+
+            .countdown-item:hover::before {
+                transform: translateX(100%);
+            }
+
+            .countdown-number {
+                font-size: 3rem;
+                font-weight: 700;
+                color: var(--primary);
+                margin-bottom: 0.5rem;
+                text-shadow: 0 0 10px rgba(248, 180, 0, 0.3);
+                position: relative;
+            }
+
+            .countdown-number::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 50px;
+                height: 2px;
+                background: var(--peanut-butter);
+            }
+
+            .countdown-label {
+                font-size: 1rem;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                opacity: 0.8;
+                margin-top: 0.5rem;
+                color: var(--peanut-butter);
+            }
+
+            .contact-info {
+                margin-top: 2rem;
+                text-align: center;
+                background: rgba(26, 26, 46, 0.8);
+                padding: 2rem 3rem;
+                border-radius: 20px;
+                border: 1px solid rgba(248, 180, 0, 0.3);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+                backdrop-filter: blur(10px);
+                animation: fadeInUp 1s ease-in-out;
+                transform-origin: center;
+            }
+
+            .contact-info:hover {
+                animation: pulse 1s ease;
+            }
+
+            .contact-info h3 {
+                margin-bottom: 1.5rem;
+                color: var(--primary);
+                font-size: 1.5rem;
+                position: relative;
+                display: inline-block;
+            }
+
+            .contact-info h3::after {
+                content: '';
+                position: absolute;
+                bottom: -8px;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background: linear-gradient(to right, var(--primary), var(--secondary));
+                transform: scaleX(0);
+                transform-origin: right;
+                transition: transform 0.3s ease;
+            }
+
+            .contact-info:hover h3::after {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+
+            .contact-item {
+                margin: 1rem 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.8rem;
+                font-size: 1.1rem;
+            }
+
+            .contact-item i {
+                color: var(--secondary);
+                font-size: 1.3rem;
+            }
+
+            a {
+                color: var(--primary);
+                text-decoration: none;
+                transition: all 0.3s ease;
+                position: relative;
+            }
+
+            a::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 0;
+                height: 1px;
+                background: var(--secondary);
+                transition: width 0.3s ease;
+            }
+
+            a:hover {
+                color: var(--secondary);
+            }
+
+            a:hover::after {
+                width: 100%;
+            }
+
+            .social-links {
+                display: flex;
+                gap: 1.5rem;
+                margin-top: 2rem;
+                justify-content: center;
+            }
+
+            .social-link {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: linear-gradient(145deg, var(--darker), var(--dark));
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: var(--light);
+                font-size: 1.5rem;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                border: 1px solid rgba(248, 180, 0, 0.3);
+                position: relative;
+                overflow: hidden;
+            }
+
+            .social-link::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+                transition: 0.5s;
+            }
+
+            .social-link:hover {
+                transform: translateY(-5px) scale(1.1);
+                box-shadow: 0 12px 25px rgba(248, 180, 0, 0.4);
+                color: var(--primary);
+            }
+
+            .social-link:hover::before {
+                left: 100%;
+            }
+
+            .floating-peanut {
+                position: absolute;
+                opacity: 0.8;
+                z-index: -1;
+                animation: float 6s infinite ease-in-out, rotate 20s linear infinite;
+                filter: drop-shadow(0 0 5px rgba(212, 167, 106, 0.5));
+            }
+
+            .floating-dumbbell {
+                position: absolute;
+                opacity: 0.8;
+                z-index: -1;
+                animation: float 8s infinite ease-in-out 2s, rotateReverse 25s linear infinite;
+                filter: drop-shadow(0 0 5px rgba(248, 180, 0, 0.5));
+            }
+
+            .product-highlights {
+                display: flex;
+                gap: 2rem;
+                margin: 3rem 0;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .product-card {
+                background: linear-gradient(145deg, var(--darker), var(--dark));
+                padding: 2rem 1.5rem;
+                border-radius: 15px;
+                width: 220px;
+                text-align: center;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+                border: 1px solid rgba(248, 180, 0, 0.3);
+                transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                position: relative;
+                overflow: hidden;
+            }
+
+            .product-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 5px;
+                background: linear-gradient(to right, var(--primary), var(--secondary));
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.5s ease;
+            }
+
+            .product-card:hover {
+                transform: translateY(-10px) scale(1.05);
+                box-shadow: 0 15px 40px rgba(248, 180, 0, 0.3);
+            }
+
+            .product-card:hover::before {
+                transform: scaleX(1);
+            }
+
+            .product-icon {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+                color: var(--primary);
+                transition: all 0.3s ease;
+            }
+
+            .product-card:hover .product-icon {
+                transform: scale(1.2) rotate(10deg);
+                color: var(--peanut-butter);
+            }
+
+            .product-name {
+                font-weight: 700;
+                margin-bottom: 0.8rem;
+                font-size: 1.3rem;
+                position: relative;
+                display: inline-block;
+            }
+
+            .product-name::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background: var(--peanut-butter);
+                transform: scaleX(0);
+                transform-origin: right;
+                transition: transform 0.3s ease;
+            }
+
+            .product-card:hover .product-name::after {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+
+            .nutcut-highlight {
+                background: linear-gradient(145deg, var(--darker), var(--dark));
+                padding: 3rem 2rem;
+                border-radius: 20px;
+                margin: 3rem 0;
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+                border: 1px solid rgba(212, 167, 106, 0.5);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+                animation: fadeInUp 1s ease-in-out;
+                transition: all 0.5s ease;
+            }
+
+            .nutcut-highlight:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 20px 50px rgba(212, 167, 106, 0.3);
+            }
+
+            .nutcut-highlight::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url('https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?q=80&w=1000') center/cover;
+                opacity: 0.2;
+                z-index: -1;
+            }
+
+            .nutcut-highlight::after {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: linear-gradient(to bottom right,
+                        transparent,
+                        transparent,
+                        transparent,
+                        rgba(212, 167, 106, 0.1),
+                        transparent,
+                        transparent,
+                        transparent);
+                animation: rotate 15s linear infinite;
+                z-index: -1;
+            }
+
+            .nutcut-highlight h2 {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+                color: var(--peanut-butter);
+                text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+                position: relative;
+                display: inline-block;
+            }
+
+            .nutcut-highlight h2::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background: linear-gradient(to right, transparent, var(--peanut-butter), transparent);
+            }
+
+            .opening-date {
+                font-size: 1.8rem;
+                margin: 2rem 0;
+                text-align: center;
+                color: var(--light);
+                position: relative;
+                display: inline-block;
+                padding: 1rem 2rem;
+                border-radius: 10px;
+                background: rgba(26, 26, 46, 0.7);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                border: 1px solid rgba(248, 180, 0, 0.3);
+                animation: pulse 2s infinite alternate;
+            }
+
+            .opening-date span {
+                color: var(--primary);
+                font-weight: 700;
+                text-shadow: 0 0 10px rgba(248, 180, 0, 0.5);
+            }
+
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                    box-shadow: 0 5px 15px rgba(248, 180, 0, 0.3);
+                }
+
+                100% {
+                    transform: scale(1.02);
+                    box-shadow: 0 10px 25px rgba(248, 180, 0, 0.5);
+                }
+            }
+
+            @keyframes glow {
+                0% {
+                    text-shadow: 0 0 10px rgba(248, 180, 0, 0.3);
+                }
+
+                100% {
+                    text-shadow: 0 0 20px rgba(248, 180, 0, 0.7);
+                }
+            }
+
+            @keyframes fadeIn {
+                0% {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes fadeInUp {
+                0% {
+                    opacity: 0;
+                    transform: translateY(50px);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes float {
+                0% {
+                    transform: translateY(0) rotate(0deg);
+                }
+
+                50% {
+                    transform: translateY(-30px) rotate(5deg);
+                }
+
+                100% {
+                    transform: translateY(0) rotate(0deg);
+                }
+            }
+
+            @keyframes rotate {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+            @keyframes rotateReverse {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(-360deg);
+                }
+            }
+
+            @keyframes scaleIn {
+                0% {
+                    transform: scale(0.5);
+                    opacity: 0;
+                }
+
+                100% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+            }
+
+            /* Responsive styles */
+            @media (max-width: 992px) {
+                h1 {
+                    font-size: 3rem;
+                }
+
+                .nutcut-highlight h2 {
+                    font-size: 2rem;
+                }
+
+                .countdown-item {
+                    min-width: 100px;
+                    padding: 1.5rem 1rem;
+                }
+
+                .countdown-number {
+                    font-size: 2.5rem;
+                }
+            }
+
+            @media (max-width: 768px) {
+                h1 {
+                    font-size: 2.5rem;
+                }
+
+                p {
+                    font-size: 1.1rem;
+                }
+
+                .countdown-item {
+                    min-width: 80px;
+                    padding: 1.2rem 0.8rem;
+                }
+
+                .countdown-number {
+                    font-size: 2rem;
+                }
+
+                .logo {
+                    width: 140px;
+                    height: 140px;
+                }
+
+                .logo i {
+                    font-size: 4rem;
+                }
+
+                .product-card {
+                    width: 180px;
+                    padding: 1.5rem 1rem;
+                }
+
+                .nutcut-highlight {
+                    padding: 2rem 1.5rem;
+                }
+
+                .opening-date {
+                    font-size: 1.5rem;
+                    padding: 0.8rem 1.5rem;
+                }
+            }
+
+            @media (max-width: 576px) {
+                h1 {
+                    font-size: 2rem;
+                }
+
+                .countdown {
+                    gap: 1rem;
+                }
+
+                .countdown-item {
+                    min-width: 70px;
+                    padding: 1rem 0.5rem;
+                }
+
+                .countdown-number {
+                    font-size: 1.8rem;
+                }
+
+                .countdown-label {
+                    font-size: 0.8rem;
+                }
+
+                .container {
+                    padding: 1.5rem;
+                }
+
+                .product-highlights {
+                    gap: 1rem;
+                }
+
+                .product-card {
+                    width: 150px;
+                    padding: 1rem;
+                }
+
+                .contact-info {
+                    padding: 1.5rem;
+                }
+
+                .opening-date {
+                    font-size: 1.3rem;
+                    padding: 0.6rem 1.2rem;
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <!-- Floating decorative elements -->
+        <div class="floating-peanut" style="top: 10%; left: 5%; font-size: 4rem;">
+            <img src="https://cdn-icons-png.flaticon.com/512/3058/3058979.png" alt="Peanut Butter" width="80">
+        </div>
+        <div class="floating-peanut" style="top: 80%; right: 8%; font-size: 5rem;">
+            <img src="https://cdn-icons-png.flaticon.com/512/3058/3058979.png" alt="Peanut Butter" width="100">
+        </div>
+        <div class="floating-dumbbell" style="top: 20%; right: 10%; font-size: 4.5rem;">
+            <img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png" alt="Dumbbell" width="80">
+        </div>
+        <div class="floating-dumbbell" style="bottom: 15%; left: 10%; font-size: 4rem;">
+            <img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png" alt="Dumbbell" width="70">
+        </div>
+
+        <!-- Main content -->
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-store"></i>
+            </div>
+
+            <h1>Vidamin Store <span class="highlight">Coming Soon</span></h1>
+
+            <p>We're preparing something amazing for you! Our store specializing in premium <span
+                    class="highlight">NutCut Peanut Butter</span>, gym supplements, and equipment will open its doors
+                soon.</p>
+
+            <!-- Opening Date Highlight -->
+            <div class="opening-date">
+                Grand Opening on <span>April 6th, 2025</span>
+            </div>
+
+            <!-- NutCut Highlight -->
+            <div class="nutcut-highlight">
+                <h2>Featured Product: NutCut Peanut Butter</h2>
+                <p>Experience the creamiest, most nutritious peanut butter crafted for fitness enthusiasts! Our
+                    signature NutCut Peanut Butter will be available in multiple varieties to fuel your health journey.
+                </p>
+            </div>
+
+            <!-- Product Highlights -->
+            <div class="product-highlights">
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-jar"></i>
+                    </div>
+                    <div class="product-name">NutCut Peanut Butter</div>
+                    <p>Premium Quality in 5 Variants</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-capsules"></i>
+                    </div>
+                    <div class="product-name">Protein Supplements</div>
+                    <p>Top Brands Available</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-weight-hanging"></i>
+                    </div>
+                    <div class="product-name">Gym Equipment</div>
+                    <p>Quality Training Gear</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <div class="product-name">Health Supplements</div>
+                    <p>Complete Wellness Range</p>
+                </div>
+            </div>
+
+            <!-- Countdown -->
+            <div class="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h3>Visit Us</h3>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Beside HP Petrol Pump, Sabji Mandi, Shuklaganj</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span><a href="tel:9455606100">9455606100</a></span>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.instagram.com/vidamin_store__official/?igsh=MXd3NjBzdm9uMXUzeQ%3D%3D"
+                        class="social-link" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/9455606100" class="social-link" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Countdown Timer - Corrected for April 6, 2025
+            function updateCountdown() {
+                const openingDate = new Date("April 6, 2025 00:00:00").getTime();
+                const now = new Date().getTime();
+                const distance = openingDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+                document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+                document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+                document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+
+                if (distance < 0) {
+                    clearInterval(countdownTimer);
+                    document.getElementById("days").innerHTML = "00";
+                    document.getElementById("hours").innerHTML = "00";
+                    document.getElementById("minutes").innerHTML = "00";
+                    document.getElementById("seconds").innerHTML = "00";
+                }
+            }
+
+            updateCountdown();
+            const countdownTimer = setInterval(updateCountdown, 1000);
+
+            // Animate elements on scroll
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        if (entry.target.classList.contains('countdown-item')) {
+                            entry.target.style.animation = `scaleIn 0.5s ${entry.target.dataset.delay || '0s'} forwards`;
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.countdown-item, .product-card, .nutcut-highlight, .contact-info').forEach((el, index) => {
+                if (el.classList.contains('countdown-item')) {
+                    el.dataset.delay = `${index * 0.1}s`;
+                }
+                observer.observe(el);
+            });
+
+            // Add hover effect to peanut butter images
+            const peanutImages = document.querySelectorAll('.floating-peanut img');
+            peanutImages.forEach(img => {
+                img.addEventListener('mouseover', () => {
+                    img.style.transform = 'rotate(360deg)';
+                    img.style.transition = 'transform 1s ease';
+                });
+                img.addEventListener('mouseout', () => {
+                    img.style.transform = 'rotate(0deg)';
+                });
+            });
+        </script>
+    </body>
+
+</html>
