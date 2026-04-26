@@ -1,328 +1,188 @@
 <!DOCTYPE html>
-<html lang="zxx">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Gym Template">
-    <meta name="keywords" content="Gym, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gym | Template</title>
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
-
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/flaticon.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/barfiller.css" type="text/css">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <title>Contact Us | Ultra Fitness Gym</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Outfit', 'sans-serif'] }, colors: { brand: { 500: '#00f2fe', 600: '#4facfe', 900: '#0f172a' } } } } }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        body { background-color: #050505; color: #ffffff; overflow-x: hidden; }
+        .glass-nav { background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .glass-card { background: rgba(20, 20, 20, 0.6); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; transition: all 0.5s; }
+        .text-gradient { background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn-glow { background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); transition: all 0.3s ease; }
+        .btn-glow:hover { box-shadow: 0 0 25px rgba(0, 242, 254, 0.6); transform: translateY(-2px); }
+        #vanta-bg { position: fixed; z-index: -1; top: 0; left: 0; width: 100%; height: 100%; }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); transition: width 0.3s ease; }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .input-glass { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: #fff; width: 100%; padding: 16px; outline: none; transition: all 0.3s; }
+        .input-glass:focus { border-color: #00f2fe; box-shadow: 0 0 15px rgba(0,242,254,0.2); background: rgba(255,255,255,0.1); }
+    </style>
 </head>
-
-<body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Offcanvas Menu Section Begin -->
-    <div class="offcanvas-menu-overlay"></div>
-    <div class="offcanvas-menu-wrapper">
-        <div class="canvas-close">
-            <i class="fa fa-close"></i>
+<body class="antialiased font-sans flex flex-col min-h-screen">
+    <div id="vanta-bg"></div>
+    
+    <!-- HEADER START -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-24">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform">UF</div>
+                        <span class="font-heading font-black text-2xl tracking-wider text-white">Ultra<span class="text-brand-500">Fitness</span></span>
+                    </a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white hover:text-brand-500 focus:outline-none"><i class="fas fa-bars text-2xl"></i></button>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-6">
+                        <a href="index.html" class="nav-link text-gray-300 hover:text-white font-medium px-3 py-2">Home</a>
+                        <a href="about-us.html" class="nav-link text-gray-300 hover:text-white font-medium px-3 py-2">About</a>
+                        <div class="relative group">
+                            <a href="classes.html" class="nav-link text-gray-300 hover:text-white font-medium px-3 py-2 flex items-center gap-1">Classes <i class="fas fa-chevron-down text-xs"></i></a>
+                            <div class="absolute left-0 mt-2 w-48 rounded-xl shadow-lg bg-gray-900 border border-gray-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden">
+                                <a href="classes.html" class="block px-4 py-3 text-sm text-gray-300 hover:text-brand-500 hover:bg-gray-800">All Classes</a>
+                                <a href="class-timetable.html" class="block px-4 py-3 text-sm text-gray-300 hover:text-brand-500 hover:bg-gray-800">Timetable</a>
+                            </div>
+                        </div>
+                        <a href="team.html" class="nav-link text-gray-300 hover:text-white font-medium px-3 py-2">Team</a>
+                        <div class="relative group">
+                            <a href="#" class="nav-link text-gray-300 hover:text-white font-medium px-3 py-2 flex items-center gap-1">Pages <i class="fas fa-chevron-down text-xs"></i></a>
+                            <div class="absolute left-0 mt-2 w-48 rounded-xl shadow-lg bg-gray-900 border border-gray-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden">
+                                <a href="gallery.html" class="block px-4 py-3 text-sm text-gray-300 hover:text-brand-500 hover:bg-gray-800">Gallery</a>
+                                <a href="bmi-calculator.html" class="block px-4 py-3 text-sm text-gray-300 hover:text-brand-500 hover:bg-gray-800">BMI Calculator</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-link active text-white font-medium px-3 py-2">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <a href="tel:09455606100" class="btn-glow text-white px-6 py-3 rounded-full font-bold tracking-wide text-sm uppercase"><i class="fas fa-phone mr-2"></i> Join Now</a>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-900 rounded-xl border border-gray-800 mt-2">
+                    <a href="index.html" class="text-gray-300 hover:text-brand-500 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                    <a href="about-us.html" class="text-gray-300 hover:text-brand-500 block px-3 py-2 rounded-md text-base font-medium">About</a>
+                    <a href="classes.html" class="text-gray-300 hover:text-brand-500 block px-3 py-2 rounded-md text-base font-medium">Classes</a>
+                    <a href="class-timetable.html" class="text-gray-300 hover:text-brand-500 block px-3 py-2 rounded-md text-base font-medium pl-6">- Timetable</a>
+                    <a href="team.html" class="text-gray-300 hover:text-brand-500 block px-3 py-2 rounded-md text-base font-medium">Team</a>
+                    <a href="gallery.html" class="text-gray-300 hover:text-brand-500 block px-3 py-2 rounded-md text-base font-medium">Gallery</a>
+                    <a href="bmi-calculator.html" class="text-gray-300 hover:text-brand-500 block px-3 py-2 rounded-md text-base font-medium">BMI Calculator</a>
+                    <a href="contact.html" class="text-brand-500 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                </div>
+            </div>
         </div>
-        <div class="canvas-search search-switch">
-            <i class="fa fa-search"></i>
+    </nav>
+    <!-- HEADER END -->
+
+    <main class="flex-grow pt-48 pb-24">
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h1 class="font-heading text-5xl md:text-6xl font-black text-white uppercase tracking-wider mb-4">Get in <span class="text-gradient">Touch</span></h1>
+                <p class="text-gray-400">Reach out to owner Namit Gupta and our team at Ultra Fitness Gym.</p>
+            </div>
+            
+            <div class="lg:grid lg:grid-cols-2 gap-16">
+                <!-- Info -->
+                <div class="glass-card p-10" data-aos="fade-right">
+                    <h3 class="font-heading text-3xl font-bold text-white mb-8">Contact Information</h3>
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="w-14 h-14 rounded-full bg-gray-800 flex items-center justify-center text-brand-500 text-xl shadow-[0_0_20px_rgba(0,242,254,0.2)] mr-6 shrink-0"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-1">Our Location</h4>
+                                <p class="text-gray-400 leading-relaxed">Ultra Fitness Gym<br>Rajdhani Marg, Shuklaganj,<br>Haibatpur, Dhaudhi Rautapur,<br>Uttar Pradesh 209862</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-14 h-14 rounded-full bg-gray-800 flex items-center justify-center text-brand-500 text-xl shadow-[0_0_20px_rgba(0,242,254,0.2)] mr-6 shrink-0"><i class="fas fa-phone"></i></div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-1">Phone Number</h4>
+                                <p class="text-gray-400"><a href="tel:09455606100" class="hover:text-brand-500">09455606100</a></p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-14 h-14 rounded-full bg-gray-800 flex items-center justify-center text-brand-500 text-xl shadow-[0_0_20px_rgba(0,242,254,0.2)] mr-6 shrink-0"><i class="fas fa-user-tie"></i></div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-1">Owner</h4>
+                                <p class="text-gray-400">Namit Gupta</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="glass-card p-10 mt-12 lg:mt-0" data-aos="fade-left">
+                    <h3 class="font-heading text-3xl font-bold text-white mb-8">Send a Message</h3>
+                    <form action="#" class="space-y-6">
+                        <input type="text" placeholder="Your Name" class="input-glass">
+                        <input type="email" placeholder="Your Email" class="input-glass">
+                        <textarea placeholder="Your Message" rows="5" class="input-glass resize-none"></textarea>
+                        <button type="submit" class="w-full btn-glow text-white px-8 py-4 rounded-xl font-bold text-lg uppercase tracking-wider">Send Message</button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <nav class="canvas-menu mobile-menu">
-            <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./about-us.html">About Us</a></li>
-                <li><a href="./class-details.html">Classes</a></li>
-                <li><a href="./services.html">Services</a></li>
-                <li><a href="./team.html">Our Team</a></li>
-                <li><a href="#">Pages</a>
-                    <ul class="dropdown">
-                        <li><a href="./about-us.html">About us</a></li>
-                        <li><a href="./class-timetable.html">Classes timetable</a></li>
-                        <li><a href="./bmi-calculator.html">Bmi calculate</a></li>
-                        <li><a href="./team.html">Our team</a></li>
-                        <li><a href="./gallery.html">Gallery</a></li>
-                        <li><a href="./blog.html">Our blog</a></li>
-                        <li><a href="./404.html">404</a></li>
+    </main>
+
+    <!-- FOOTER START -->
+    <footer class="glass-nav pt-16 pb-8 relative z-10 border-t border-gray-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <a href="index.html" class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center text-white font-bold">UF</div>
+                        <span class="font-heading font-black text-xl tracking-wider text-white">Ultra<span class="text-brand-500">Fitness</span></span>
+                    </a>
+                    <p class="text-gray-400 text-sm mb-6">Owned by Namit Gupta. Redefining fitness with premium facilities and unmatched aesthetic environments.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-brand-500 transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-brand-500 transition-colors"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-heading text-lg font-bold text-white mb-6 uppercase tracking-wider">Contact Us</h4>
+                    <ul class="space-y-4 text-gray-400 text-sm">
+                        <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-3 text-brand-500"></i><span>Rajdhani Marg, Shuklaganj,<br>Haibatpur, Dhaudhi Rautapur,<br>Uttar Pradesh 209862</span></li>
+                        <li class="flex items-center"><i class="fas fa-phone mr-3 text-brand-500"></i><a href="tel:09455606100" class="hover:text-brand-500 transition-colors">09455606100</a></li>
                     </ul>
-                </li>
-                <li><a href="./contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <div id="mobile-menu-wrap"></div>
-        <div class="canvas-social">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-youtube-play"></i></a>
-            <a href="#"><i class="fa fa-instagram"></i></a>
+                </div>
+                <div>
+                    <h4 class="font-heading text-lg font-bold text-white mb-6 uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm flex flex-col">
+                        <a href="classes.html" class="hover:text-brand-500 transition-colors">Our Classes</a>
+                        <a href="class-timetable.html" class="hover:text-brand-500 transition-colors">Class Timetable</a>
+                        <a href="bmi-calculator.html" class="hover:text-brand-500 transition-colors">BMI Calculator</a>
+                        <a href="gallery.html" class="hover:text-brand-500 transition-colors">Gallery</a>
+                        <a href="contact.html" class="hover:text-brand-500 transition-colors">Get in Touch</a>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center pt-8 border-t border-gray-800"><p class="text-gray-500 text-sm">&copy; 2026 Ultra Fitness Gym. All rights reserved.</p></div>
         </div>
-    </div>
-    <!-- Offcanvas Menu Section End -->
+    </footer>
+    <!-- FOOTER END -->
 
-    <!-- Header Section Begin -->
-    <header class="header-section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="logo">
-                        <a href="./index.html">
-                            <img src="img/logo.png" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <nav class="nav-menu">
-                        <ul>
-                            <li><a href="./index.html">Home</a></li>
-                            <li><a href="./about-us.html">About Us</a></li>
-                            <li><a href="./class-details.html">Classes</a></li>
-                            <li><a href="./services.html">Services</a></li>
-                            <li><a href="./team.html">Our Team</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="dropdown">
-                                    <li><a href="./about-us.html">About us</a></li>
-                                    <li><a href="./class-timetable.html">Classes timetable</a></li>
-                                    <li><a href="./bmi-calculator.html">Bmi calculate</a></li>
-                                    <li><a href="./team.html">Our team</a></li>
-                                    <li><a href="./gallery.html">Gallery</a></li>
-                                    <li><a href="./blog.html">Our blog</a></li>
-                                    <li><a href="./404.html">404</a></li>
-                                </ul>
-                            </li>
-                            <li class="active"><a href="./contact.html">Contact</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-lg-3">
-                    <div class="top-option">
-                        <div class="to-search search-switch">
-                            <i class="fa fa-search"></i>
-                        </div>
-                        <div class="to-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-youtube-play"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="canvas-open">
-                <i class="fa fa-bars"></i>
-            </div>
-        </div>
-    </header>
-    <!-- Header End -->
-
-    <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb-bg.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="breadcrumb-text">
-                        <h2>Contact Us</h2>
-                        <div class="bt-option">
-                            <a href="./index.html">Home</a>
-                            <a href="#">Pages</a>
-                            <span>Contact us</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Breadcrumb Section End -->
-
-    <!-- Contact Section Begin -->
-    <section class="contact-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="section-title contact-title">
-                        <span>Contact Us</span>
-                        <h2>GET IN TOUCH</h2>
-                    </div>
-                    <div class="contact-widget">
-                        <div class="cw-text">
-                            <i class="fa fa-map-marker"></i>
-                            <p>333 Middle Winchendon Rd, Rindge,<br/> NH 03461</p>
-                        </div>
-                        <div class="cw-text">
-                            <i class="fa fa-mobile"></i>
-                            <ul>
-                                <li>125-711-811</li>
-                                <li>125-668-886</li>
-                            </ul>
-                        </div>
-                        <div class="cw-text email">
-                            <i class="fa fa-envelope"></i>
-                            <p>Support.gymcenter@gmail.com</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="leave-comment">
-                        <form action="#">
-                            <input type="text" placeholder="Name">
-                            <input type="text" placeholder="Email">
-                            <input type="text" placeholder="Website">
-                            <textarea placeholder="Comment"></textarea>
-                            <button type="submit">Submit</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12087.069761554938!2d-74.2175599360452!3d40.767139456514954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c254b5958982c3%3A0xb6ab3931055a2612!2sEast%20Orange%2C%20NJ%2C%20USA!5e0!3m2!1sen!2sbd!4v1581710470843!5m2!1sen!2sbd"
-                    height="550" style="border:0;" allowfullscreen=""></iframe>
-            </div>
-        </div>
-    </section>
-    <!-- Contact Section End -->
-
-    <!-- Get In Touch Section Begin -->
-    <div class="gettouch-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="gt-text">
-                        <i class="fa fa-map-marker"></i>
-                        <p>333 Middle Winchendon Rd, Rindge,<br/> NH 03461</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="gt-text">
-                        <i class="fa fa-mobile"></i>
-                        <ul>
-                            <li>125-711-811</li>
-                            <li>125-668-886</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="gt-text email">
-                        <i class="fa fa-envelope"></i>
-                        <p>Support.gymcenter@gmail.com</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Get In Touch Section End -->
-
-    <!-- Footer Section Begin -->
-    <section class="footer-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="fs-about">
-                        <div class="fa-logo">
-                            <a href="#"><img src="img/logo.png" alt=""></a>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua endisse ultrices gravida lorem.</p>
-                        <div class="fa-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-youtube-play"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa  fa-envelope-o"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-6">
-                    <div class="fs-widget">
-                        <h4>Useful links</h4>
-                        <ul>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Classes</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-6">
-                    <div class="fs-widget">
-                        <h4>Support</h4>
-                        <ul>
-                            <li><a href="#">Login</a></li>
-                            <li><a href="#">My account</a></li>
-                            <li><a href="#">Subscribe</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="fs-widget">
-                        <h4>Tips & Guides</h4>
-                        <div class="fw-recent">
-                            <h6><a href="#">Physical fitness may help prevent depression, anxiety</a></h6>
-                            <ul>
-                                <li>3 min read</li>
-                                <li>20 Comment</li>
-                            </ul>
-                        </div>
-                        <div class="fw-recent">
-                            <h6><a href="#">Fitness: The best exercise to lose belly fat and tone up...</a></h6>
-                            <ul>
-                                <li>3 min read</li>
-                                <li>20 Comment</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="copyright-text">
-                        <p>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://ajay-dhangar.github.io/Responsive-portfolio-website.github.io/" target="_blank">Ajay Dhangar</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Footer Section End -->
-
-    <!-- Search model Begin -->
-    <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-            <div class="search-close-switch">+</div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Search here.....">
-            </form>
-        </div>
-    </div>
-    <!-- Search model end -->
-
-    <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/masonry.pkgd.min.js"></script>
-    <script src="js/jquery.barfiller.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
-
-
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        VANTA.WAVES({ el: "#vanta-bg", mouseControls: true, touchControls: true, gyroControls: false, minHeight: 200.00, minWidth: 200.00, scale: 1.00, scaleMobile: 1.00, color: 0x050505, shininess: 35.00, waveHeight: 20.00, waveSpeed: 0.50, zoom: 0.9 });
+        $(window).scroll(function() { if ($(window).scrollTop() > 50) { $('#navbar').addClass('py-0 shadow-lg').removeClass('py-2'); } else { $('#navbar').addClass('py-2').removeClass('py-0 shadow-lg'); } });
+        $('#mobile-menu-btn').click(function() { $('#mobile-menu').toggleClass('hidden'); });
+    </script>
 </body>
-
 </html>
