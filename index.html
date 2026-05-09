@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ultra Fitness Gym</title>
+    <link rel="icon" type="image/x-icon" href="./assets/image.ico">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Outfit', 'sans-serif'] }, colors: { brand: { 500: '#00f2fe', 600: '#4facfe', 900: '#0f172a' } } } } }
+                                                                tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Outfit', 'sans-serif'] }, colors: { brand: { 500: '#ef4444', 600: '#dc2626', 900: '#7f1d1d' } } } } }
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -15,13 +16,13 @@
         body { background-color: #050505; color: #ffffff; overflow-x: hidden; }
         .glass-nav { background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
         .glass-card { background: rgba(20, 20, 20, 0.6); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
-        .glass-card:hover { transform: translateY(-10px); border-color: rgba(0, 242, 254, 0.4); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 242, 254, 0.15); }
-        .text-gradient { background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .btn-glow { background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); transition: all 0.3s ease; }
-        .btn-glow:hover { box-shadow: 0 0 25px rgba(0, 242, 254, 0.6); transform: translateY(-2px); }
+        .glass-card:hover { transform: translateY(-10px); border-color: rgba(239, 68, 68, 0.4); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(239, 68, 68, 0.15); }
+        .text-gradient { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn-glow { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); transition: all 0.3s ease; }
+        .btn-glow:hover { box-shadow: 0 0 25px rgba(239, 68, 68, 0.6); transform: translateY(-2px); }
         #vanta-bg { position: fixed; z-index: -1; top: 0; left: 0; width: 100%; height: 100%; }
         .nav-link { position: relative; }
-        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); transition: width 0.3s ease; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); transition: width 0.3s ease; }
         .nav-link:hover::after, .nav-link.active::after { width: 100%; }
         .hero-image { transform: rotateY(-15deg) rotateX(5deg); transition: transform 0.5s ease; box-shadow: -20px 20px 50px rgba(0,0,0,0.5); border-radius: 2rem; }
         .hero-image-wrapper { perspective: 1000px; }
@@ -31,7 +32,7 @@
 <body class="antialiased font-sans flex flex-col min-h-screen">
     <div id="vanta-bg"></div>
 
-    <!-- HEADER START -->
+        <!-- HEADER START -->
     <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-24">
@@ -46,7 +47,7 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-6">
-                        <a href="index.html" class="nav-link active text-white font-medium px-3 py-2">Home</a>
+                    
                         <a href="about-us.html" class="nav-link text-gray-300 hover:text-white font-medium px-3 py-2">About</a>
                         <div class="relative group">
                             <a href="classes.html" class="nav-link text-gray-300 hover:text-white font-medium px-3 py-2 flex items-center gap-1">Classes <i class="fas fa-chevron-down text-xs"></i></a>
@@ -55,36 +56,127 @@
                                 <a href="class-timetable.html" class="block px-4 py-3 text-sm text-gray-300 hover:text-brand-500 hover:bg-gray-800">Timetable</a>
                             </div>
                         </div>
-                        <a href="team.html" class="nav-link text-gray-300 hover:text-white font-medium px-3 py-2">Team</a>
                         <div class="relative group">
-                            <a href="#" class="nav-link text-gray-300 hover:text-white font-medium px-3 py-2 flex items-center gap-1">Pages <i class="fas fa-chevron-down text-xs"></i></a>
+                            <a href="#" class="nav-link text-gray-300 hover:text-white font-medium px-3 py-2 flex items-center gap-1">Find us <i
+                                    class="fas fa-chevron-down text-xs"></i></a>
                             <div class="absolute left-0 mt-2 w-48 rounded-xl shadow-lg bg-gray-900 border border-gray-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden">
                                 <a href="gallery.html" class="block px-4 py-3 text-sm text-gray-300 hover:text-brand-500 hover:bg-gray-800">Gallery</a>
                                 <a href="bmi-calculator.html" class="block px-4 py-3 text-sm text-gray-300 hover:text-brand-500 hover:bg-gray-800">BMI Calculator</a>
                             </div>
                         </div>
+                        <div class="relative group">
+                            <a href="#" class="nav-link text-gray-300 hover:text-white font-medium px-3 py-2 flex items-center gap-1">Store &
+                                Plans <i class="fas fa-chevron-down text-xs"></i></a>
+                            <div
+                                class="absolute left-0 mt-2 w-56 rounded-xl shadow-lg bg-gray-900 border border-gray-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden">
+                                <a href="vidamin-store.html"
+                                    class="block px-4 py-3 text-sm text-gray-300 hover:text-brand-500 hover:bg-gray-800">Vidamin Store</a>
+                                <a href="nut-cut-peanut-butter.html"
+                                    class="block px-4 py-3 text-sm text-gray-300 hover:text-brand-500 hover:bg-gray-800">Nut Cut Peanut
+                                    Butter</a>
+                                <a href="diet-workout.html"
+                                    class="block px-4 py-3 text-sm text-gray-300 hover:text-brand-500 hover:bg-gray-800">Diet & Workout
+                                    Guide</a>
+                            </div>
+                        </div>
+                        <a href="namit-gupta.html" class="nav-link text-gray-300 hover:text-white font-medium px-3 py-2">Namit Gupta</a>
                         <a href="contact.html" class="nav-link text-gray-300 hover:text-white font-medium px-3 py-2">Contact</a>
                     </div>
                 </div>
                 <div class="hidden md:block">
-                    <a href="tel:09455606100" class="btn-glow text-white px-6 py-3 rounded-full font-bold tracking-wide text-sm uppercase"><i class="fas fa-phone mr-2"></i> Join Now</a>
+                    <a href="https://wa.me/919455606100" target="_blank"
+                        class="btn-glow text-white px-6 py-3 rounded-full font-bold tracking-wide text-sm uppercase"><i
+                            class="fab fa-whatsapp mr-2"></i> Join Now</a>
                 </div>
             </div>
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden pb-4">
-                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-900 rounded-xl border border-gray-800 mt-2">
-                    <a href="index.html" class="text-brand-500 block px-3 py-2 rounded-md text-base font-medium">Home</a>
-                    <a href="about-us.html" class="text-gray-300 hover:text-brand-500 block px-3 py-2 rounded-md text-base font-medium">About</a>
-                    <a href="classes.html" class="text-gray-300 hover:text-brand-500 block px-3 py-2 rounded-md text-base font-medium">Classes</a>
-                    <a href="class-timetable.html" class="text-gray-300 hover:text-brand-500 block px-3 py-2 rounded-md text-base font-medium pl-6">- Timetable</a>
-                    <a href="team.html" class="text-gray-300 hover:text-brand-500 block px-3 py-2 rounded-md text-base font-medium">Team</a>
-                    <a href="gallery.html" class="text-gray-300 hover:text-brand-500 block px-3 py-2 rounded-md text-base font-medium">Gallery</a>
-                    <a href="bmi-calculator.html" class="text-gray-300 hover:text-brand-500 block px-3 py-2 rounded-md text-base font-medium">BMI Calculator</a>
-                    <a href="contact.html" class="text-gray-300 hover:text-brand-500 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
-                </div>
-            </div>
-        </div>
+                                </div>
     </nav>
+    
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay"
+        class="fixed inset-0 bg-black/80 z-[60] hidden transition-opacity duration-300 opacity-0 md:hidden"></div>
+    
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu"
+        class="fixed top-0 right-0 h-full w-80 max-w-full bg-[rgba(15,15,15,0.98)] backdrop-blur-xl z-[70] transform translate-x-full transition-transform duration-300 shadow-2xl border-l border-gray-800 overflow-y-auto md:hidden">
+        <div class="flex justify-between items-center p-6 border-b border-gray-800">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div
+                    class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center text-white font-bold text-sm">
+                    UF</div>
+                <span class="font-heading font-black text-xl tracking-wider text-white">Ultra<span
+                        class="text-brand-500">Fitness</span></span>
+            </a>
+            <button id="mobile-menu-close" class="text-gray-400 hover:text-white focus:outline-none"><i
+                    class="fas fa-times text-2xl"></i></button>
+        </div>
+        <div class="p-6 space-y-6">
+        
+            <a href="about-us.html" class="block text-lg font-medium text-gray-300 hover:text-white transition-colors">About</a>
+        
+            <div class="space-y-2">
+                <button
+                    class="flex items-center justify-between w-full text-lg font-medium text-gray-300 hover:text-white transition-colors focus:outline-none"
+                    onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.fa-chevron-down').classList.toggle('rotate-180')">
+                    <span>Classes</span>
+                    <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
+                </button>
+                <div class="hidden pl-4 space-y-3 border-l-2 border-brand-500 pt-2 pb-2 mt-2 bg-gray-900/40 rounded-r-lg">
+                    <a href="classes.html" class="block text-base text-gray-400 hover:text-white transition-colors">All
+                        Classes</a>
+                    <a href="class-timetable.html"
+                        class="block text-base text-gray-400 hover:text-white transition-colors">Timetable</a>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <button
+                            class="flex items-center justify-between w-full text-lg font-medium text-gray-300 hover:text-white transition-colors focus:outline-none"
+                            onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.fa-chevron-down').classList.toggle('rotate-180')">
+                            <span>Find Us</span>
+                            <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
+                        </button>
+                        <div class="hidden pl-4 space-y-3 border-l-2 border-brand-500 pt-2 pb-2 mt-2 bg-gray-900/40 rounded-r-lg">
+                            <a href="gallery.html" class="block text-base text-gray-400 hover:text-white transition-colors">Gallery</a>
+                            <a href="bmi-calculator.html" class="block text-base text-gray-400 hover:text-white transition-colors">BMI
+                                Calculator</a>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <button
+                            class="flex items-center justify-between w-full text-lg font-medium text-gray-300 hover:text-white transition-colors focus:outline-none"
+                            onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.fa-chevron-down').classList.toggle('rotate-180')">
+                            <span>Store & Plans</span>
+                            <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
+                        </button>
+                        <div class="hidden pl-4 space-y-3 border-l-2 border-brand-500 pt-2 pb-2 mt-2 bg-gray-900/40 rounded-r-lg">
+                            <a href="vidamin-store.html" class="block text-base text-gray-400 hover:text-white transition-colors">Vidamin
+                                Store</a>
+                            <a href="nut-cut-peanut-butter.html"
+                                class="block text-base text-gray-400 hover:text-white transition-colors">Nut Cut Peanut Butter</a>
+                            <a href="diet-workout.html" class="block text-base text-gray-400 hover:text-white transition-colors">Diet &
+                                Workout Guide</a>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    <a href="namit-gupta.html" class="block text-lg font-medium text-gray-300 hover:text-white transition-colors">Namit
+                        Gupta</a>
+                    <a href="contact.html" class="block text-lg font-medium text-gray-300 hover:text-white transition-colors">Contact</a>
+                    
+                    <div class="pt-4 border-t border-gray-800">
+                        <a href="https://wa.me/919455606100" target="_blank"
+                            class="w-full btn-glow flex items-center justify-center text-white px-6 py-4 rounded-xl font-bold tracking-wide text-sm uppercase">
+                            <i class="fab fa-whatsapp mr-2 text-xl"></i> Join Now
+                        </a>
+                    </div>
+                    </div>
+                    </div>
+
     <!-- HEADER END -->
 
     <!-- MAIN CONTENT START -->
@@ -110,7 +202,81 @@
                         </div>
                     </div>
                     <div class="lg:col-span-6 mt-16 lg:mt-0 hero-image-wrapper hidden lg:block" data-aos="zoom-in-left" data-aos-duration="1500">
-                        <img src="./img/hero/hero-1.jpg" alt="Gym Workout" class="hero-image w-full object-cover h-[600px]">
+                        <img src="./assets/ufg-logo.jpg" alt="Gym Workout" class="hero-image w-full object-cover h-[600px]">
+                        </div>
+                        </div>
+                        </div>
+                        </section>
+                        
+                        <!-- Namit Gupta Personal Brand Section -->
+                        <section class="py-24 relative bg-black/40">
+                            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                                    <div class="order-2 lg:order-1" data-aos="fade-right">
+                                        <h4 class="text-brand-500 font-bold tracking-widest uppercase mb-2">Master Coach & Founder</h4>
+                                        <h2 class="font-heading text-4xl md:text-5xl font-black text-white mb-6">TRAIN WITH <span
+                                                class="text-gradient">NAMIT GUPTA</span></h2>
+                                        <p class="text-gray-400 mb-6 text-lg leading-relaxed">With over a decade of elite fitness experience,
+                                            Namit Gupta has redefined what it means to train like a champion. Get personalized coaching that
+                                            pushes past your limits and builds your ultimate aesthetic.</p>
+                                        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                                            <div class="glass-card px-6 py-4 border-l-4 border-brand-500 flex-1">
+                                                <h4 class="text-white font-black text-2xl">500+</h4>
+                                                <p class="text-gray-400 text-sm">Transformations</p>
+                                            </div>
+                                            <div class="glass-card px-6 py-4 border-l-4 border-brand-500 flex-1">
+                                                <h4 class="text-white font-black text-2xl">10+</h4>
+                                                <p class="text-gray-400 text-sm">Years Exp.</p>
+                                            </div>
+                                        </div>
+                                        <a href="namit-gupta.html"
+                                            class="btn-glow text-white px-8 py-4 rounded-full font-bold uppercase tracking-wide inline-block shadow-[0_0_20px_rgba(239,68,68,0.4)]">View
+                                            Profile & Plans</a>
+                                    </div>
+                                    <div class="order-1 lg:order-2 glass-card p-4 rounded-3xl" data-aos="fade-left">
+                                        <img src="./assets/namit_gupta_homepage.png" alt="Namit Gupta"
+                                            class="w-full h-[500px] object-cover rounded-2xl shadow-2xl">
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- Nutrition & Store Showcase -->
+                        <section class="py-24 relative">
+                            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                                <div class="text-center mb-16" data-aos="fade-up">
+                                    <h2 class="text-brand-500 font-bold tracking-widest uppercase text-sm mb-3">Fuel Your Performance</h2>
+                                    <h3 class="font-heading text-4xl md:text-5xl font-black text-white">PREMIUM <span
+                                            class="text-gradient">NUTRITION</span></h3>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <!-- Vidamin Store -->
+                                    <div class="glass-card p-8 group relative overflow-hidden h-[400px] flex flex-col justify-end"
+                                        data-aos="fade-up" data-aos-delay="100">
+                                        <img src="./assets/vidamin_store.jpg" alt="Vidamin Store"
+                                            class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity duration-500 z-0">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10"></div>
+                                        <div class="relative z-20">
+                                            <h4 class="font-heading text-3xl font-bold text-white mb-2">Vidamin Supplements</h4>
+                                            <p class="text-gray-300 mb-6">100% Authentic whey, pre-workouts, and vitamins.</p>
+                                            <a href="vidamin-store.html"
+                                                class="btn-glow inline-block text-white px-6 py-2 rounded-full font-bold uppercase tracking-wide">Shop
+                                                Now</a>
+                                        </div>
+                                    </div>
+                                    <!-- Nut Cut -->
+                                    <div class="glass-card p-8 group relative overflow-hidden h-[400px] flex flex-col justify-end"
+                                        data-aos="fade-up" data-aos-delay="200">
+                                        <img src="./assets/nut_cut_store.jpg" alt="Nut Cut Peanut Butter"
+                                            class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity duration-500 z-0">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10"></div>
+                                        <div class="relative z-20">
+                                            <h4 class="font-heading text-3xl font-bold text-white mb-2">Nut Cut Peanut Butter</h4>
+                                            <p class="text-gray-300 mb-6">High protein, zero added sugar, perfect for athletes.</p>
+                                            <a href="nut-cut-peanut-butter.html"
+                                                class="btn-glow inline-block text-white px-6 py-2 rounded-full font-bold uppercase tracking-wide">Order
+                                                Now</a>
+                                        </div>
                     </div>
                 </div>
             </div>
@@ -125,31 +291,51 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- Franchise 1 -->
-                    <div class="glass-card p-8 group" data-aos="fade-up" data-aos-delay="100">
-                        <div class="w-full h-48 bg-gray-800 rounded-xl mb-6 overflow-hidden relative">
-                            <div class="absolute inset-0 flex items-center justify-center text-gray-600"><i class="fas fa-image text-4xl mb-2 block text-center"></i></div>
-                            <span class="absolute bottom-4 left-4 text-white font-bold px-3 py-1 bg-brand-500 rounded-md text-sm">HQ</span>
-                        </div>
-                        <h4 class="font-heading text-2xl font-bold text-white mb-2">Ultra Fitness HQ</h4>
-                        <p class="text-gray-400 text-sm mb-4"><i class="fas fa-map-marker-alt text-brand-500 mr-2"></i> Rajdhani Marg, Shuklaganj</p>
-                    </div>
+                    <div class="glass-card p-8 group flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                        <div>
+                            <div class="w-full h-48 bg-gray-800 rounded-xl mb-6 overflow-hidden relative">
+                                <img src="./assets/Ufg_main_building.jpeg" alt="HQ Gym"
+                                    class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                                <span class="absolute bottom-4 left-4 text-white font-bold px-3 py-1 bg-brand-500 rounded-md text-sm">HQ</span>
+                                </div>
+                                <h4 class="font-heading text-2xl font-bold text-white mb-2">Ultra Fitness HQ</h4>
+                                <p class="text-gray-400 text-sm mb-4"><i class="fas fa-map-marker-alt text-brand-500 mr-2"></i> Rajdhani Marg,
+                                    Shuklaganj</p>
+                                </div>
+                                <a href="hq-gym.html"
+                                    class="btn-glow text-white px-6 py-2 rounded-full font-bold text-sm text-center uppercase tracking-wide mt-4">View
+                                    Location</a>
+                                </div>
                     <!-- Franchise 2 -->
-                    <div class="glass-card p-8 group" data-aos="fade-up" data-aos-delay="200">
-                        <div class="w-full h-48 bg-gray-800 rounded-xl mb-6 overflow-hidden relative">
-                            <div class="absolute inset-0 flex items-center justify-center text-gray-600"><i class="fas fa-image text-4xl mb-2 block text-center"></i></div>
-                            <span class="absolute bottom-4 left-4 text-white font-bold px-3 py-1 bg-brand-500 rounded-md text-sm">Center 2</span>
+                    <div class="glass-card p-8 group flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+                        <div>
+                            <div class="w-full h-48 bg-gray-800 rounded-xl mb-6 overflow-hidden relative">
+                                <img src="./assets/Ufg_2nd_building.jpeg.jpeg" alt="Branch Gym"
+                                    class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                                <span class="absolute bottom-4 left-4 text-white font-bold px-3 py-1 bg-brand-500 rounded-md text-sm">Center 2</span>
+                                </div>
+                            <h4 class="font-heading text-2xl font-bold text-white mb-2">Ultra Fitness Gyms</h4>
+                            <p class="text-gray-400 text-sm mb-4"><i class="fas fa-map-marker-alt text-brand-500 mr-2"></i> Haibatpur Center</p>
+                            </div>
+                        <a href="branch-gym.html"
+                            class="btn-glow text-white px-6 py-2 rounded-full font-bold text-sm text-center uppercase tracking-wide mt-4">View
+                            Location</a>
                         </div>
-                        <h4 class="font-heading text-2xl font-bold text-white mb-2">Ultra Fitness Elite</h4>
-                        <p class="text-gray-400 text-sm mb-4"><i class="fas fa-map-marker-alt text-brand-500 mr-2"></i> Haibatpur Center</p>
-                    </div>
                     <!-- Franchise 3 -->
-                    <div class="glass-card p-8 group" data-aos="fade-up" data-aos-delay="300">
-                        <div class="w-full h-48 bg-gray-800 rounded-xl mb-6 overflow-hidden relative">
-                            <div class="absolute inset-0 flex items-center justify-center text-gray-600"><i class="fas fa-image text-4xl mb-2 block text-center"></i></div>
-                            <span class="absolute bottom-4 left-4 text-white font-bold px-3 py-1 bg-brand-500 rounded-md text-sm">Center 3</span>
-                        </div>
-                        <h4 class="font-heading text-2xl font-bold text-white mb-2">Ultra Fitness Pro</h4>
-                        <p class="text-gray-400 text-sm mb-4"><i class="fas fa-map-marker-alt text-brand-500 mr-2"></i> Dhaudhi Rautapur</p>
+                    <div class="glass-card p-8 group flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
+                        <div>
+                            <div class="w-full h-48 bg-gray-800 rounded-xl mb-6 overflow-hidden relative">
+                                <img src="./assets/own_franchise.jpg" alt="Franchise Opportunity"
+                                    class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                                <span class="absolute bottom-4 left-4 text-white font-bold px-3 py-1 bg-brand-500 rounded-md text-sm">Franchise</span>
+                                </div>
+                            <h4 class="font-heading text-2xl font-bold text-white mb-2">Own a Franchise</h4>
+                            <p class="text-gray-400 text-sm mb-4"><i class="fas fa-handshake text-brand-500 mr-2"></i> Partner with Ultra Fitness
+                            </p>
+                            </div>
+                            <a href="franchise.html"
+                                class="btn-glow text-white px-6 py-2 rounded-full font-bold text-sm text-center uppercase tracking-wide mt-4">Apply
+                                Now</a>
                     </div>
                 </div>
             </div>
@@ -174,7 +360,8 @@
                             <li><i class="fas fa-check text-brand-500 mr-2"></i>1 Group Class</li>
                             <li><i class="fas fa-times text-gray-600 mr-2"></i>Personal Training</li>
                         </ul>
-                        <a href="contact.html" class="btn-glow block text-white px-6 py-3 rounded-full font-bold uppercase tracking-wide">Select Plan</a>
+                        <a href="https://wa.me/919455606100"
+                            class="btn-glow block text-white px-6 py-3 rounded-full font-bold uppercase tracking-wide">Select Plan</a>
                     </div>
                     <!-- Plan 2 -->
                     <div class="glass-card p-8 text-center border-brand-500 transform md:-translate-y-4 relative" data-aos="fade-up" data-aos-delay="200">
@@ -188,7 +375,8 @@
                             <li><i class="fas fa-check text-brand-500 mr-2"></i>Unlimited Classes</li>
                             <li><i class="fas fa-check text-brand-500 mr-2"></i>Nutrition Plan</li>
                         </ul>
-                        <a href="contact.html" class="btn-glow block text-white px-6 py-3 rounded-full font-bold uppercase tracking-wide">Select Plan</a>
+                        <a href="https://wa.me/919455606100"
+                            class="btn-glow block text-white px-6 py-3 rounded-full font-bold uppercase tracking-wide">Select Plan</a>
                     </div>
                     <!-- Plan 3 -->
                     <div class="glass-card p-8 text-center" data-aos="fade-up" data-aos-delay="300">
@@ -201,63 +389,256 @@
                             <li><i class="fas fa-check text-brand-500 mr-2"></i>Unlimited Classes</li>
                             <li><i class="fas fa-check text-brand-500 mr-2"></i>3 PT Sessions</li>
                         </ul>
-                        <a href="contact.html" class="btn-glow block text-white px-6 py-3 rounded-full font-bold uppercase tracking-wide">Select Plan</a>
-                    </div>
-                </div>
+                        <a href="https://wa.me/919455606100"
+                            class="btn-glow block text-white px-6 py-3 rounded-full font-bold uppercase tracking-wide">Select Plan</a>
+                        </div>
+                        </div>
+                        </div>
+                        </section>
+                        
+                        <!-- Gallery Slider Section -->
+                        <section class="py-24 relative overflow-hidden">
+                            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-10 flex justify-between items-end">
+                                <div data-aos="fade-right">
+                                    <h2 class="text-brand-500 font-bold tracking-widest uppercase text-sm mb-3">See It To Believe It</h2>
+                                    <h3 class="font-heading text-4xl md:text-5xl font-black text-white">OUR <span
+                                            class="text-gradient">FACILITIES</span></h3>
+                                </div>
+                                <div class="hidden sm:block" data-aos="fade-left">
+                                    <a href="gallery.html"
+                                        class="btn-glow inline-block text-white px-6 py-3 rounded-full font-bold uppercase tracking-wide text-sm">View
+                                        Full Gallery</a>
+                                </div>
+                            </div>
+                        
+                            <div class="w-full relative z-10" data-aos="fade-up">
+                                <div
+                                    class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory hide-scrollbar px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+                                    <!-- Slider Item 1 -->
+                                    <div
+                                        class="snap-center shrink-0 w-[85vw] sm:w-[60vw] md:w-[45vw] lg:w-[30vw] h-[400px] glass-card overflow-hidden group relative p-0">
+                                        <img src="./img/gallery/gallery-1.jpeg" alt="Gym Facility"
+                                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                            onerror="this.src='./assets/ufg-logo.jpeg'">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8 pointer-events-none">
+                                            <h4
+                                                class="text-white font-bold text-2xl uppercase tracking-wider translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                                Weight Room</h4>
+                                            <p
+                                                class="text-brand-500 font-bold text-sm uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                                                Premium Equipment</p>
+                                        </div>
+                                    </div>
+                                    <!-- Slider Item 2 -->
+                                    <div
+                                        class="snap-center shrink-0 w-[85vw] sm:w-[60vw] md:w-[45vw] lg:w-[30vw] h-[400px] glass-card overflow-hidden group relative p-0">
+                                        <img src="./img/gallery/gallery-2.jpeg" alt="Gym Facility"
+                                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                            onerror="this.src='./img/hero/hero-2.jpeg'">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8 pointer-events-none">
+                                            <h4
+                                                class="text-white font-bold text-2xl uppercase tracking-wider translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                                Cardio Zone</h4>
+                                            <p
+                                                class="text-brand-500 font-bold text-sm uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                                                Endurance Training</p>
+                                        </div>
+                                    </div>
+                                    <!-- Slider Item 3 -->
+                                    <div
+                                        class="snap-center shrink-0 w-[85vw] sm:w-[60vw] md:w-[45vw] lg:w-[30vw] h-[400px] glass-card overflow-hidden group relative p-0">
+                                        <img src="./img/gallery/gallery-3.jpeg" alt="Gym Facility"
+                                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                            onerror="this.src='./img/classes/class-1.jpeg'">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8 pointer-events-none">
+                                            <h4
+                                                class="text-white font-bold text-2xl uppercase tracking-wider translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                                CrossFit Area</h4>
+                                            <p
+                                                class="text-brand-500 font-bold text-sm uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                                                High Intensity</p>
+                                        </div>
+                                    </div>
+                                    <!-- Slider Item 4 -->
+                                    <div
+                                        class="snap-center shrink-0 w-[85vw] sm:w-[60vw] md:w-[45vw] lg:w-[30vw] h-[400px] glass-card overflow-hidden group relative p-0">
+                                        <img src="./img/gallery/gallery-4.jpeg" alt="Gym Facility"
+                                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                            onerror="this.src='./img/classes/class-2.jpeg'">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8 pointer-events-none">
+                                            <h4
+                                                class="text-white font-bold text-2xl uppercase tracking-wider translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                                Free Weights</h4>
+                                            <p
+                                                class="text-brand-500 font-bold text-sm uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                                                Build Strength</p>
+                                        </div>
+                                    </div>
+                                    <!-- Slider Item 5 -->
+                                    <div
+                                        class="snap-center shrink-0 w-[85vw] sm:w-[60vw] md:w-[45vw] lg:w-[30vw] h-[400px] glass-card overflow-hidden group relative p-0">
+                                        <img src="./img/gallery/gallery-5.jpeg" alt="Gym Facility"
+                                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                            onerror="this.src='./img/classes/class-3.jpeg'">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8 pointer-events-none">
+                                            <h4
+                                                class="text-white font-bold text-2xl uppercase tracking-wider translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                                Lounge Area</h4>
+                                            <p
+                                                class="text-brand-500 font-bold text-sm uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                                                Relax & Recover</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+            <div class="sm:hidden text-center mt-6 z-10 relative">
+                <a href="gallery.html"
+                    class="btn-glow inline-block text-white px-8 py-4 rounded-full font-bold uppercase tracking-wide text-sm">View
+                    Full Gallery</a>
             </div>
         </section>
-        
+
         <!-- CTA Section -->
         <section class="py-24 relative">
             <div class="max-w-4xl mx-auto px-4 text-center z-10 relative" data-aos="zoom-in">
                 <h2 class="font-heading text-4xl md:text-5xl font-black text-white mb-6">KNOW YOUR <span class="text-gradient">FITNESS LEVEL</span></h2>
                 <p class="text-gray-400 mb-8 max-w-2xl mx-auto">Start your journey by calculating your Body Mass Index (BMI). Our advanced calculator will help you understand where you stand and what plan suits you best.</p>
-                <a href="bmi-calculator.html" class="inline-block glass-card text-white px-10 py-4 rounded-full font-bold text-lg uppercase tracking-wider hover:bg-brand-500 transition-colors">
+                <a href="bmi-calculator.html"
+                    class="inline-block glass-card text-white px-10 py-4 rounded-full font-bold text-lg uppercase tracking-wider hover:bg-brand-500 transition-colors border-brand-500">
                     <i class="fas fa-calculator mr-2"></i> Calculate BMI Now
                 </a>
             </div>
         </section>
+<!-- MAPS & LOCATIONS SECTION -->
+<section class="py-24 relative bg-black/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-brand-500 font-bold tracking-widest uppercase text-sm mb-3">Find Us</h2>
+            <h3 class="font-heading text-4xl md:text-5xl font-black text-white">OUR <span
+                    class="text-gradient">LOCATIONS</span></h3>
+            <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Visit our premium fitness centers equipped with top-tier
+                machines and world-class trainers.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="glass-card p-4 rounded-3xl" data-aos="fade-right">
+                <h4 class="font-heading text-2xl font-bold text-white mb-4 px-4 pt-2">Ultra Fitness HQ</h4>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d57135.01190069179!2d80.3746033!3d26.4899332!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c3f713db7ef85%3A0x7b876868a0d0f79e!2sUltra%20fitness%20gym!5e0!3m2!1sen!2sin!4v1778341112207!5m2!1sen!2sin"
+                    width="100%" height="400" style="border:0; border-radius: 1.5rem;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="glass-card p-4 rounded-3xl" data-aos="fade-left">
+                <h4 class="font-heading text-2xl font-bold text-white mb-4 px-4 pt-2">Haibatpur Branch</h4>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57131.17835026631!2d80.32671704863283!3d26.497646100000008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c3f65c045e68d%3A0xe6319938a6f7d7a!2sUltra%20Fitness%20Gyms!5e0!3m2!1sen!2sin!4v1778341133958!5m2!1sen!2sin"
+                    width="100%" height="400" style="border:0; border-radius: 1.5rem;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
     </main>
     <!-- MAIN CONTENT END -->
 
-    <!-- FOOTER START -->
-    <footer class="glass-nav pt-16 pb-8 relative z-10 border-t border-gray-800 mt-auto">
+        <!-- FOOTER START -->
+    <footer class="glass-nav pt-20 pb-10 relative z-10 border-t-2 border-brand-900 mt-auto bg-black">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-                <div>
-                    <a href="index.html" class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center text-white font-bold">UF</div>
-                        <span class="font-heading font-black text-xl tracking-wider text-white">Ultra<span class="text-brand-500">Fitness</span></span>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="md:col-span-1">
+                    <a href="index.html" class="flex items-center gap-3 mb-6 group">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-500 to-red-900 flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform">
+                            UF</div>
+                        <span class="font-heading font-black text-2xl tracking-wider text-white">Ultra<span
+                                class="text-brand-500">Fitness</span></span>
                     </a>
-                    <p class="text-gray-400 text-sm mb-6">Owned by Namit Gupta. Redefining fitness with premium facilities and unmatched aesthetic environments.</p>
+                    <p class="text-gray-400 text-sm mb-8 leading-relaxed">Owned by Namit Gupta. Redefining fitness with premium facilities,
+                        aesthetic dark environments, and state-of-the-art training methodologies.</p>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-brand-500 transition-colors"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-brand-500 transition-colors"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
+                        <a href="https://www.instagram.com/ultra_fitness_gyms/"
+                            class="w-12 h-12 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center text-white hover:bg-brand-500 hover:border-brand-500 transition-all transform hover:-translate-y-1"><i
+                                class="fab fa-facebook-f text-lg"></i></a>
+                        <a href="https://www.instagram.com/ultra_fitness_gyms/"
+                            class="w-12 h-12 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center text-white hover:bg-brand-500 hover:border-brand-500 transition-all transform hover:-translate-y-1"><i
+                                class="fab fa-instagram text-lg"></i></a>
+                        <a href="https://www.instagram.com/ultra_fitness_gyms/"
+                            class="w-12 h-12 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center text-white hover:bg-brand-500 hover:border-brand-500 transition-all transform hover:-translate-y-1"><i
+                                class="fab fa-youtube text-lg"></i></a>
+                        </div>
+                        </div>
+                        <div>
+                            <h4 class="font-heading text-xl font-bold text-white mb-6 uppercase tracking-wider">Quick Links</h4>
+                            <ul class="space-y-3 text-gray-400 text-sm flex flex-col">
+                                <a href="namit-gupta.html" class="hover:text-brand-500 transition-colors flex items-center"><i
+                                        class="fas fa-chevron-right text-xs mr-2 text-brand-500"></i> Namit Gupta</a>
+                                <a href="classes.html" class="hover:text-brand-500 transition-colors flex items-center"><i
+                                        class="fas fa-chevron-right text-xs mr-2 text-brand-500"></i> Our Classes</a>
+                                <a href="diet-workout.html" class="hover:text-brand-500 transition-colors flex items-center"><i
+                                        class="fas fa-chevron-right text-xs mr-2 text-brand-500"></i> Diet & Workout</a>
+                                <a href="gallery.html" class="hover:text-brand-500 transition-colors flex items-center"><i
+                                        class="fas fa-chevron-right text-xs mr-2 text-brand-500"></i> Gallery</a>
+                                <a href="bmi-calculator.html" class="hover:text-brand-500 transition-colors flex items-center"><i
+                                        class="fas fa-chevron-right text-xs mr-2 text-brand-500"></i> BMI Calculator</a>
+                            </ul>
+                        </div>
                 <div>
-                    <h4 class="font-heading text-lg font-bold text-white mb-6 uppercase tracking-wider">Contact Us</h4>
-                    <ul class="space-y-4 text-gray-400 text-sm">
-                        <li class="flex items-start">
-                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-brand-500"></i>
-                            <span>Rajdhani Marg, Shuklaganj,<br>Haibatpur, Dhaudhi Rautapur,<br>Uttar Pradesh 209862</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-phone mr-3 text-brand-500"></i><a href="tel:09455606100" class="hover:text-brand-500 transition-colors">09455606100</a>
-                        </li>
+                    <h4 class="font-heading text-xl font-bold text-white mb-6 uppercase tracking-wider">Store & Plans</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm flex flex-col">
+                        <a href="vidamin-store.html" class="hover:text-brand-500 transition-colors flex items-center"><i
+                                class="fas fa-shopping-cart text-xs mr-2 text-brand-500"></i> Vidamin Supplements</a>
+                        <a href="nut-cut-peanut-butter.html" class="hover:text-brand-500 transition-colors flex items-center"><i
+                                class="fas fa-jar text-xs mr-2 text-brand-500"></i> Nut Cut Peanut Butter</a>
+                        <a href="hq-gym.html" class="hover:text-brand-500 transition-colors flex items-center"><i
+                                class="fas fa-map-marker-alt text-xs mr-2 text-brand-500"></i> HQ Location</a>
+                        <a href="branch-gym.html" class="hover:text-brand-500 transition-colors flex items-center"><i
+                                class="fas fa-map-marker-alt text-xs mr-2 text-brand-500"></i> Branch Location</a>
+                        <a href="franchise.html" class="hover:text-brand-500 transition-colors flex items-center"><i
+                                class="fas fa-handshake text-xs mr-2 text-brand-500"></i> Franchise Inquiry</a>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-heading text-lg font-bold text-white mb-6 uppercase tracking-wider">Quick Links</h4>
-                    <ul class="space-y-2 text-gray-400 text-sm flex flex-col">
-                        <a href="classes.html" class="hover:text-brand-500 transition-colors">Our Classes</a>
-                        <a href="class-timetable.html" class="hover:text-brand-500 transition-colors">Class Timetable</a>
-                        <a href="bmi-calculator.html" class="hover:text-brand-500 transition-colors">BMI Calculator</a>
-                        <a href="gallery.html" class="hover:text-brand-500 transition-colors">Gallery</a>
+                    <h4 class="font-heading text-xl font-bold text-white mb-6 uppercase tracking-wider">Contact Us</h4>
+                    <ul class="space-y-5 text-gray-400 text-sm">
+                        <li class="flex items-start">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-gray-900 flex items-center justify-center text-brand-500 shrink-0 mr-4 border border-gray-800">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <span class="pt-1">Rajdhani Marg, Shuklaganj,<br>Haibatpur, Dhaudhi Rautapur,<br>UP 209862</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-gray-900 flex items-center justify-center text-brand-500 shrink-0 mr-4 border border-gray-800">
+                                <i class="fab fa-whatsapp text-lg"></i>
+                            </div>
+                            <a href="https://wa.me/919455606100" target="_blank"
+                                class="hover:text-brand-500 transition-colors font-medium text-white text-base">+91 94556 06100</a>
+                            </li>
+                            <li class="flex items-start mt-4">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-gray-900 flex items-center justify-center text-brand-500 shrink-0 mr-4 border border-gray-800">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-white font-medium mb-1 pt-1">Opening Hours</span>
+                                    <span>Mon - Sat: 5:00 AM - 11:00 PM<br>Sunday: 6:00 AM - 09:00 PM</span>
+                                    </div>
+                                    </li>
                     </ul>
                 </div>
             </div>
-            <div class="text-center pt-8 border-t border-gray-800"><p class="text-gray-500 text-sm">&copy; 2026 Ultra Fitness Gym. All rights reserved.</p></div>
+            <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-800">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2026 Ultra Fitness Gym. All rights reserved.</p>
+                <div class="flex space-x-6 text-sm text-gray-500">
+                    <a href="#" class="hover:text-brand-500 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-brand-500 transition-colors">Terms of Service</a>
+                </div>
+            </div>
         </div>
     </footer>
     <!-- FOOTER END -->
@@ -270,7 +651,22 @@
         AOS.init({ duration: 1000, once: true, offset: 50 });
         VANTA.WAVES({ el: "#vanta-bg", mouseControls: true, touchControls: true, gyroControls: false, minHeight: 200.00, minWidth: 200.00, scale: 1.00, scaleMobile: 1.00, color: 0x050505, shininess: 35.00, waveHeight: 20.00, waveSpeed: 0.50, zoom: 0.9 });
         $(window).scroll(function() { if ($(window).scrollTop() > 50) { $('#navbar').addClass('py-0 shadow-lg').removeClass('py-2'); } else { $('#navbar').addClass('py-2').removeClass('py-0 shadow-lg'); } });
-        $('#mobile-menu-btn').click(function() { $('#mobile-menu').toggleClass('hidden'); });
+                        $('#mobile-menu-btn, #mobile-menu-close, #mobile-menu-overlay').click(function () {
+                            var menu = $('#mobile-menu');
+                            var overlay = $('#mobile-menu-overlay');
+                            if (menu.hasClass('translate-x-full')) {
+                                menu.removeClass('translate-x-full');
+                                overlay.removeClass('hidden');
+                                setTimeout(function () { overlay.removeClass('opacity-0'); }, 10);
+                            } else {
+                                menu.addClass('translate-x-full');
+                                overlay.addClass('opacity-0');
+                                setTimeout(function () { overlay.addClass('hidden'); }, 300);
+                            }
+                        });
+
+                    
+
     </script>
 </body>
 </html>
