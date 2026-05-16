@@ -209,34 +209,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <div class="glass-card p-8">
                     <h3 class="text-2xl font-bold mb-6 border-b border-gray-700 pb-4">Franchise Inquiry Form</h3>
-                    <form action="#" method="POST" class="space-y-6">
+                    <form class="space-y-6" id="franchiseForm">
+                         <input type="hidden" name="formType" value="franchise">
+                         <input type="text" name="website_honeypot" style="display:none !important;" tabindex="-1" autocomplete="off">
                         <div>
                             <label class="block text-sm font-medium text-gray-400 mb-2">Full Name</label>
-                            <input type="text" class="input-glass" placeholder="John Doe">
+                            <input type="text" class="input-glass" placeholder="John Doe" name="name">
                         </div>
                         <div class="grid grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-sm font-medium text-gray-400 mb-2">Phone</label>
-                                <input type="tel" class="input-glass" placeholder="+91...">
+                                <input type="tel" class="input-glass" placeholder="+91..." name="phone">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-400 mb-2">Email</label>
-                                <input type="email" class="input-glass" placeholder="john@example.com">
+                                <input type="email" class="input-glass" placeholder="john@example.com" name="email">
                             </div>
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-400 mb-2">City of Interest</label>
-                            <input type="text" class="input-glass" placeholder="Your City">
+                            <input type="text" class="input-glass" placeholder="Your City" name="location">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-400 mb-2">Investment Capital Available</label>
-                            <select class="input-glass">
+                            <select class="input-glass" name="investment">
                                 <option>₹50L - ₹1Cr</option>
                                 <option>₹1Cr - ₹2Cr</option>
                                 <option>₹2Cr+</option>
                             </select>
                         </div>
-                        <button type="button" class="btn-glow w-full text-white px-6 py-4 rounded-lg font-bold uppercase tracking-wide">Submit Inquiry</button>
+                        <button type="submit" class="btn-glow w-full text-white px-6 py-4 rounded-lg font-bold uppercase tracking-wide">Submit Inquiry</button>
                     </form>
                 </div>
             </div>
@@ -360,6 +362,143 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         });
 
 
+    </script>
+
+    <script>
+            const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwY-azBrl_lMLwBftJ6sW9wgmohWoFaYkz5UR_bH4s_f-B_bnSLVLSZoZShkLEiRfU/exec";
+
+            // In-browser rate limit: block resubmit for 10 min per form
+            function isRateLimited(formId) {
+                var key = "rl_" + formId;
+                var last = localStorage.getItem(key);
+                if (last && Date.now() - parseInt(last) < 600000) return true;
+                return false;
+            }
+            function setRateLimit(formId) {
+                localStorage.setItem("rl_" + formId, Date.now().toString());
+            }
+
+            // Basic input sanitization
+            function sanitize(str) {
+                if (!str) return "";
+                return str.toString().trim().replace(/[<>"'`]/g, "");
+            }
+
+            // Validate phone (min 7 digits)
+            function validPhone(phone) {
+                return /^[\d\s\+\-\(\)]{7,15}$/.test(phone.trim());
+            }
+
+            // Show inline error under a field
+            function showError(input, msg) {
+                var existing = input.parentNode.querySelector(".form-error");
+                if (existing) existing.remove();
+                var err = document.createElement("p");
+                err.className = "form-error";
+                err.style.cssText = "color:#f87171;font-size:12px;margin-top:4px;";
+                err.textContent = msg;
+                input.parentNode.appendChild(err);
+                input.style.borderColor = "#f87171";
+            }
+
+            function clearErrors(form) {
+                form.querySelectorAll(".form-error").forEach(function(e) { e.remove(); });
+                form.querySelectorAll("input,textarea,select").forEach(function(e) {
+                e.style.borderColor = "";
+                });
+            }
+
+            function validateForm(form) {
+                var valid = true;
+                clearErrors(form);
+
+                form.querySelectorAll("[required]").forEach(function(field) {
+                if (!field.value.trim()) {
+                    showError(field, "This field is required.");
+                    valid = false;
+                }
+                });
+
+                var phoneField = form.querySelector("input[name='phone']");
+                if (phoneField && phoneField.value && !validPhone(phoneField.value)) {
+                showError(phoneField, "Enter a valid phone number.");
+                valid = false;
+                }
+
+                var emailField = form.querySelector("input[name='email']");
+                if (emailField && emailField.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {
+                showError(emailField, "Enter a valid email address.");
+                valid = false;
+                }
+
+                return valid;
+            }
+
+            function setupForm(formId) {
+                var form = document.getElementById(formId);
+                if (!form) return;
+
+                form.addEventListener("submit", function(e) {
+                e.preventDefault();
+
+                if (!validateForm(form)) return;
+
+                if (isRateLimited(formId)) {
+                    alert("You've already submitted recently. Please wait 10 minutes before trying again.");
+                    return;
+                }
+
+                var btn = form.querySelector("button[type='submit']");
+                var originalText = btn.innerText;
+                btn.innerText = "Sending...";
+                btn.disabled = true;
+
+                // Sanitize all fields before sending
+                var formData = new FormData(form);
+                var params = new URLSearchParams();
+                formData.forEach(function(value, key) {
+                    params.append(key, sanitize(value));
+                });
+
+                fetch(SCRIPT_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: params.toString()
+                })
+                .then(function(res) { return res.json(); })
+                .then(function(data) {
+                    if (data.result === "success") {
+                    setRateLimit(formId);
+                    btn.innerText = "Submitted!";
+                    btn.style.background = "#16a34a";
+                    form.reset();
+                    setTimeout(function() {
+                        btn.innerText = originalText;
+                        btn.style.background = "";
+                        btn.disabled = false;
+                    }, 4000);
+                    } else if (data.result === "rate_limited") {
+                    alert("Too many submissions. Please wait 10 minutes.");
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                    } else if (data.result === "spam_blocked") {
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                    } else {
+                    alert("Something went wrong. Please try again.");
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                    }
+                })
+                .catch(function() {
+                    alert("Network error. Please check your connection.");
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                });
+                });
+            }
+
+            setupForm("franchiseForm");
 
     </script>
 </body>
