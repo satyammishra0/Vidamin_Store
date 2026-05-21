@@ -15,7 +15,7 @@ const footerTemplate = footerMatch[0];
 
 const pages = [
     {
-        filename: 'hq-gym.html',
+        filename: 'ultrafitness-gym.html',
         title: 'Headquarters',
         content: `
     <main class="flex-grow pt-32 pb-20">
@@ -57,7 +57,7 @@ const pages = [
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
                     <h2 class="text-2xl font-bold mb-4">Premium Fitness Near You</h2>
-                    <p class="text-gray-400 mb-6">Our Haibatpur branch offers the same relentless commitment to excellence in a modern, dark-themed environment. Perfect for those looking for intense workouts with top-of-the-line cardio and strength equipment.</p>
+                    <p class="text-gray-400 mb-6">Our Subhash Nagar Shuklaganj offers the same relentless commitment to excellence in a modern, dark-themed environment. Perfect for those looking for intense workouts with top-of-the-line cardio and strength equipment.</p>
                     <ul class="space-y-4 text-gray-300 mb-8">
                         <li><i class="fas fa-check text-brand-500 mr-2"></i> Advanced Cardio Deck</li>
                         <li><i class="fas fa-check text-brand-500 mr-2"></i> Comprehensive Free Weights Area</li>
