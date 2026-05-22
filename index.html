@@ -274,97 +274,102 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "HealthClub"],
-  "name": "Ultra Fitness Gym",
-  "alternateName": "Ultra Fitness Gyms Shuklaganj",
-  "description": "Best gym in Shuklaganj and Unnao, UP. Premium fitness center with modern equipment, personal training by Namit Gupta, group classes, and nutrition products.",
-  "url": "https://ultrafitnessgyms.com",
-  "telephone": "+919455606100",
-  "priceRange": "₹₹",
-  "image": "https://ultrafitnessgyms.com/assets/Ufg_main_building.jpeg",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Rajdhani Marg, Shuklaganj",
-    "addressLocality": "Haibatpur, Dhaudhi Rautapur",
-    "addressRegion": "Uttar Pradesh",
-    "postalCode": "209862",
-    "addressCountry": "IN"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 26.4899332,
-    "longitude": 80.3746033
-  },
-  "openingHoursSpecification": [
+  "@graph": [
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-      "opens": "05:00",
-      "closes": "23:00"
+      "@type": ["LocalBusiness", "HealthClub"],
+      "@id": "https://ultrafitnessgyms.com",
+      "name": "Ultra Fitness Gym",
+      "alternateName": "Ultra Fitness Gyms Shuklaganj",
+      "description": "Best gym in Shuklaganj and Unnao, UP. Premium fitness center with modern equipment, personal training by Namit Gupta, group classes, and nutrition products.",
+      "url": "https://ultrafitnessgyms.com",
+      "telephone": "+919455606100",
+      "priceRange": "₹₹",
+      "image": "https://ultrafitnessgyms.com/assets/Ufg_main_building.jpeg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rajdhani Marg, Shuklaganj",
+        "addressLocality": "Haibatpur, Dhaudhi Rautapur",
+        "addressRegion": "Uttar Pradesh",
+        "postalCode": "209862",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 26.4899332,
+        "longitude": 80.3746033
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "05:00",
+          "closes": "23:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "06:00",
+          "closes": "21:00"
+        }
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Namit Gupta",
+        "url": "https://ultrafitnessgyms.com/namit-gupta.html",
+        "sameAs": "https://www.instagram.com/namit_gupta/"
+      },
+      "sameAs": [
+        "https://www.instagram.com/ultra_fitness_gyms/"
+      ]
     },
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Sunday",
-      "opens": "06:00",
-      "closes": "21:00"
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where is Ultra Fitness Gym located?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ultra Fitness Gym is located at Rajdhani Marg, Shuklaganj, Haibatpur, Unnao, Uttar Pradesh 209862. We have two locations in Shuklaganj."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the gym membership fees at Ultra Fitness?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ultra Fitness Gym membership starts at ₹2000 per month. We also offer 3-month plans at ₹4000, 6-month elite at ₹6000, and annual membership at ₹8000."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is the owner of Ultra Fitness Gym Shuklaganj?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ultra Fitness Gym is owned and founded by Namit Gupta, a fitness trainer with over 10 years of experience and 500+ body transformations in Shuklaganj and Unnao."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the timings of Ultra Fitness Gym?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ultra Fitness Gym is open Monday to Saturday from 5:00 AM to 11:00 PM, and on Sundays from 6:00 AM to 9:00 PM."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Ultra Fitness the best gym in Unnao?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ultra Fitness Gym is the most modern gym in Shuklaganj and Unnao, offering Hammer Strength equipment, dedicated CrossFit zones, personal training by Namit Gupta, and premium nutrition products."
+          }
+        }
+      ]
     }
-  ],
-  "founder": {
-    "@type": "Person",
-    "name": "Namit Gupta",
-    "url": "https://ultrafitnessgyms.com/namit-gupta.html",
-    "sameAs": "https://www.instagram.com/namit_gupta/"
-  },
-  "sameAs": [
-    "https://www.instagram.com/ultra_fitness_gyms/"
   ]
 }
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Where is Ultra Fitness Gym located?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ultra Fitness Gym is located at Rajdhani Marg, Shuklaganj, Haibatpur, Unnao, Uttar Pradesh 209862. We have two locations in Shuklaganj."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are the gym membership fees at Ultra Fitness?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ultra Fitness Gym membership starts at ₹2000 per month. We also offer 3-month plans at ₹4000, 6-month elite at ₹6000, and annual membership at ₹8000."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Who is the owner of Ultra Fitness Gym Shuklaganj?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ultra Fitness Gym is owned and founded by Namit Gupta, a fitness trainer with over 10 years of experience and 500+ body transformations in Shuklaganj and Unnao."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are the timings of Ultra Fitness Gym?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ultra Fitness Gym is open Monday to Saturday from 5:00 AM to 11:00 PM, and on Sundays from 6:00 AM to 9:00 PM."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is Ultra Fitness the best gym in Unnao?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ultra Fitness Gym is the most modern gym in Shuklaganj and Unnao, offering Hammer Strength equipment, dedicated CrossFit zones, personal training by Namit Gupta, and premium nutrition products."
-      }
-    }
-  ]
-}
+
 </script>
 
 </head>
