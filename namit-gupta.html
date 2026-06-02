@@ -34,6 +34,36 @@
         .input-glass { width: 100%; background: rgba(20, 20, 20, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 12px 16px; color: #ffffff; transition: all 0.3s ease; }
         .input-glass:focus { outline: none; border-color: #ef4444; box-shadow: 0 0 15px rgba(239, 68, 68, 0.2); background: rgba(30, 30, 30, 0.8); }
         .input-glass::placeholder { color: #6b7280; }
+    
+        /* TOP ANNOUNCEMENT BAR SYSTEM */
+        .top-trial-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%);
+            color: #ffffff;
+            z-index: 10000;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .top-trial-bar .cta:hover {
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            transform: scale(1.03);
+        }
+        @media (max-width: 768px) {
+            .top-trial-bar { height: 56px; }
+            body { padding-top: 56px !important; }
+            #navbar { top: 56px !important; }
+        }
+        @media (min-width: 769px) {
+            body { padding-top: 48px !important; }
+            #navbar { top: 48px !important; }
+        }
+
     </style>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -88,6 +118,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 </head>
 <body class="antialiased font-sans flex flex-col min-h-screen">
+
+    <!-- TOP ANNOUNCEMENT BAR START -->
+    <div class="top-trial-bar" role="region" aria-label="Free trial banner">
+        <div class="container flex justify-between items-center w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="text-xs sm:text-sm font-black tracking-wide uppercase flex items-center gap-2">
+                <span class="bg-white/10 px-2 py-0.5 rounded text-[10px] text-white animate-pulse font-black">VIP PASS</span>
+                <span class="truncate">🔥 FREE 1-DAY TRIAL &amp; HOME DEMO — 100% Guaranteed Training!</span>
+            </div>
+            <a href="https://wa.me/919455606100" target="_blank" class="cta text-xs sm:text-sm font-bold bg-white text-brand-600 hover:bg-gray-100 px-4 py-1.5 rounded-full transition-all duration-300 shadow-md whitespace-nowrap uppercase tracking-wider shrink-0">Claim Pass</a>
+        </div>
+    </div>
+    <!-- TOP ANNOUNCEMENT BAR END -->
+
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDZ834XR"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -116,6 +159,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <div class="absolute left-0 mt-2 w-48 rounded-xl shadow-lg bg-gray-900 border border-gray-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden">
                                 <a href="classes.html" class="block px-4 py-3 text-sm text-gray-300 hover:text-brand-500 hover:bg-gray-800">All Classes</a>
                                 <a href="class-timetable.html" class="block px-4 py-3 text-sm text-gray-300 hover:text-brand-500 hover:bg-gray-800">Timetable</a>
+                                <a href="female-trainers.html" class="block px-4 py-3 text-sm text-gray-300 hover:text-brand-500 hover:bg-gray-800">Ladies Coaching &amp; PT</a>
                             </div>
                         </div>
                         <div class="relative group">
@@ -241,70 +285,143 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 <!-- Right Column: Rich Bio Content -->
                 <div class="lg:col-span-7 space-y-12">
+                    <!-- H1 TITLE -->
                     <div>
                         <h4 class="text-brand-500 font-bold tracking-widest uppercase mb-2">Founder & Head Trainer</h4>
                         <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
-                            Namit Gupta — <span class="text-gradient">Founder & Head Trainer, Ultra Fitness Gym Shuklaganj, Unnao</span>
+                            Namit Gupta — <span class="text-gradient">Founder & Head Coach, Ultra Fitness Gym</span>
                         </h1>
                         <div class="w-20 h-1 bg-brand-500 mt-6"></div>
                     </div>
 
-                    <!-- Section 2 -->
-                    <div class="space-y-4">
-                        <h2 class="font-heading text-2xl md:text-3xl font-black text-white">
-                            About Namit Gupta — <span class="text-gradient">The Vision Behind Ultra Fitness</span>
-                        </h2>
-                        <p class="text-gray-300 leading-relaxed text-base font-light">
-                            Namit Gupta is the founder, owner, and head coach of Ultra Fitness Gym, located in Shuklaganj, Unnao, Uttar Pradesh. With more than ten years of professional experience in bodybuilding, strength training, and physical conditioning, Namit has dedicated his life to helping individuals achieve their ultimate fitness goals. He is the main visionary behind Ultra Fitness Gym's two premium locations in Shuklaganj, providing top-tier, results-driven training programs for local athletes and gym members. Namit has personally guided over 500 successful body transformations, establishing a trusted track record of physical excellence in the Unnao region. His passion for fitness led him to create a premium training environment that focuses on high-quality equipment and professional guidance. Under his leadership, Ultra Fitness has grown into the premier fitness destination in Shuklaganj. Namit continues to actively coach members, design progressive workout programs, and lead the fitness movement in Unnao daily.
-                        </p>
+                    <!-- ABOUT & PHILOSOPHY IN 2-COLUMN GRID -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="glass-card p-6 border-t-2 border-brand-500 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-heading text-xl font-bold text-white mb-4">The Vision Behind Ultra Fitness</h3>
+                                <p class="text-gray-300 text-sm leading-relaxed font-light">
+                                    Namit Gupta is the founder, owner, and head coach of Ultra Fitness Gym. With over ten years of bodybuilding, sports nutrition, and physical conditioning expertise, Namit has dedicated his career to building high-performance physical transformations in Shuklaganj and Unnao. He designed our two premium locations (Rajdhani Marg HQ and Subhash Nagar branch) to provide world-class Hammer Strength equipment and results-driven coaching.
+                                </p>
+                            </div>
+                            <span class="text-brand-500 text-xs font-bold tracking-wider mt-4 uppercase">10+ Years Legacy</span>
+                        </div>
+
+                        <div class="glass-card p-6 border-t-2 border-brand-500 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-heading text-xl font-bold text-white mb-4">Coaching & Training Philosophy</h3>
+                                <p class="text-gray-300 text-sm leading-relaxed font-light">
+                                    Namit's philosophy rests on scientific progressive overload, structural hypertrophy, and strict execution. He prioritizes structural bodybuilding splits paired with nutrition-first diet setups, guiding gym-goers past plateaus safely. By merging elite plate-loaded Hammer Strength gear with a premium dark, focused aesthetic, Namit guarantees a high-intensity environment focused on absolute results.
+                                </p>
+                            </div>
+                            <span class="text-brand-500 text-xs font-bold tracking-wider mt-4 uppercase">Progressive Overload</span>
+                        </div>
                     </div>
 
-                    <!-- Section 3 -->
-                    <div class="space-y-4">
-                        <h2 class="font-heading text-2xl md:text-3xl font-black text-white">
-                            Training Philosophy — <span class="text-gradient">Why Namit's Approach Gets Real Results</span>
-                        </h2>
-                        <p class="text-gray-300 leading-relaxed text-base font-light">
-                            Namit's fitness and coaching philosophy is built upon three core pillars: dark aesthetic training, premium equipment, and results-driven coaching. He strongly emphasizes scientific progressive overload, focusing on structured weight increases and perfect execution mechanics to stimulate muscular development safely. Nutrition-first strategies form the bedrock of his physical transformations, ensuring members fuel their bodies with authentic, high-quality nutrition and customized meal plans. Beyond physical exercise, Namit prioritizes developing a disciplined training mindset, helping members build consistency and resilience. By utilizing elite plate-loaded Hammer Strength gear in an immersive dark aesthetic space, Namit ensures every session is highly focused, motivating, and optimized for real physical results.
-                        </p>
-                    </div>
-
-                    <!-- Section 4 -->
-                    <div class="space-y-4">
-                        <h2 class="font-heading text-2xl md:text-3xl font-black text-white">
-                            500+ Real Transformations <span class="text-gradient">at Ultra Fitness Shuklaganj</span>
-                        </h2>
-                        <p class="text-gray-300 leading-relaxed text-base font-light">
-                            With a proven track record of over 500 real, life-changing body transformations, Namit Gupta has helped members at Ultra Fitness Gym Shuklaganj successfully build muscle, incinerate body fat, and improve lifelong health. His results-driven approach is consistently applied across both premium gym locations in Shuklaganj, ensuring that every member has access to elite strength resources and professional coaching. If you want to learn more about our transformation proof, facilities, and story, visit our <a href="about-us.html" class="text-brand-500 hover:underline font-bold">About Us page</a> for all details.
-                        </p>
-                    </div>
-
-                    <!-- Section 5 -->
+                    <!-- ELITE PERSONAL CONSULTATIONS SECTION -->
                     <div class="space-y-6">
-                        <h2 class="font-heading text-2xl md:text-3xl font-black text-white">
-                            Train with Namit Gupta — <span class="text-gradient">Personal Coaching at Ultra Fitness Unnao</span>
+                        <h2 class="font-heading text-3xl font-black text-white uppercase tracking-wider">
+                            Elite Personal <span class="text-gradient">Consultations</span>
                         </h2>
-                        <p class="text-gray-300 leading-relaxed text-base font-light">
-                            Personal coaching and customized training programs are available directly with Namit Gupta at both Ultra Fitness Gym locations in Unnao. Namit provides tailored strength routines, metabolic conditioning plans, and direct nutritional templates designed to fit your unique lifestyle and fitness targets. To join our active community, view our diverse <a href="classes.html" class="text-brand-500 hover:underline font-bold">gym classes</a> and check the <a href="class-timetable.html" class="text-brand-500 hover:underline font-bold">weekly class timetable</a> for slots. Ready to take your training to the next level? Get started by messaging Namit directly on WhatsApp to book your personal coaching consultation!
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Work directly with Namit Gupta. Get premium online or offline consultations tailored to your biological profile, lifestyle, and targets. All training programs carry a **100% Guaranteed Results** assurance.
                         </p>
-                        <div>
-                            <a href="https://wa.me/919455606100" target="_blank" class="btn-glow text-white px-8 py-4 rounded-full font-bold uppercase tracking-wide text-sm inline-flex items-center gap-2">
-                                <i class="fab fa-whatsapp text-lg"></i> Message Namit on WhatsApp
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Field 1: Disease-Specific Fitness -->
+                            <div class="glass-card p-6 border-l-4 border-brand-500">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <i class="fas fa-heartbeat text-brand-500 text-xl"></i>
+                                    <h4 class="text-white font-bold text-base">Disease-Specific Fitness</h4>
+                                </div>
+                                <p class="text-gray-400 text-xs leading-relaxed font-light">
+                                    Clinical conditioning and lifestyle adjustment for Diabetes, Thyroid, Hypertension, and PCOD/PCOS recovery.
+                                </p>
+                            </div>
+
+                            <!-- Field 2: Custom Calories & Intake -->
+                            <div class="glass-card p-6 border-l-4 border-brand-500">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <i class="fas fa-apple-whole text-brand-500 text-xl"></i>
+                                    <h4 class="text-white font-bold text-base">Intake & Calorie Mapping</h4>
+                                </div>
+                                <p class="text-gray-400 text-xs leading-relaxed font-light">
+                                    Precision biological meal planning, TDEE calculation, macro tracking, and genuine clinical supplementation.
+                                </p>
+                            </div>
+
+                            <!-- Field 3: Body Building Approach -->
+                            <div class="glass-card p-6 border-l-4 border-brand-500">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <i class="fas fa-dumbbell text-brand-500 text-xl"></i>
+                                    <h4 class="text-white font-bold text-base">Aesthetic Bodybuilding</h4>
+                                </div>
+                                <p class="text-gray-400 text-xs leading-relaxed font-light">
+                                    Custom strength templates, hypertrophy tracking, and bodybuilding split splits for maximum athletic development.
+                                </p>
+                            </div>
+
+                            <!-- Field 4: Free At-Home PT Demo -->
+                            <div class="glass-card p-6 border-l-4 border-brand-500">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <i class="fas fa-home text-brand-500 text-xl"></i>
+                                    <h4 class="text-white font-bold text-base">Home Demo (No Equipment)</h4>
+                                </div>
+                                <p class="text-gray-400 text-xs leading-relaxed font-light">
+                                    Book a free offline/online PT demo at home. Absolute training intensity with zero equipment needed!
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 1-Day VIP Pass Promo Card -->
+                        <div class="glass-card p-6 bg-gradient-to-r from-brand-900/40 to-black border border-brand-500/20 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-6 mt-6">
+                            <div>
+                                <h4 class="text-white font-bold text-lg mb-1">🎁 Claim Your Free 1-Day VIP Pass</h4>
+                                <p class="text-gray-400 text-xs font-light">Experience the premium Hammer Strength equipment at our Shuklaganj HQ or Subhash Nagar branch.</p>
+                            </div>
+                            <a href="https://wa.me/919455606100" target="_blank" class="btn-glow text-white px-6 py-2.5 rounded-full font-bold uppercase tracking-wider text-xs whitespace-nowrap">
+                                Get VIP Pass
                             </a>
                         </div>
                     </div>
 
-                    <!-- Section 6 -->
-                    <div class="space-y-4">
-                        <h2 class="font-heading text-2xl md:text-3xl font-black text-white">
-                            Follow Namit <span class="text-gradient">on Instagram</span>
-                        </h2>
-                        <p class="text-gray-300 leading-relaxed text-base font-light mb-4">
-                            Stay motivated by following Namit Gupta on Instagram. Get daily training tips, nutritional guidance, workout videos, transformation reviews, and behind-the-scenes looks at Ultra Fitness Gym. Follow his official handle <a href="https://www.instagram.com/namit_gupta/" target="_blank" class="text-brand-500 hover:underline font-bold">@namit_gupta</a> to connect directly and join his social community.
+                    <!-- TRANSFORMATIONS & INSTAGRAM IN 2-COLUMN GRID -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="glass-card p-6 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-heading text-xl font-bold text-white mb-4">500+ Transformations</h3>
+                                <p class="text-gray-400 text-xs leading-relaxed font-light mb-4">
+                                    With a proven track record of over 500 life-changing physical transformations in Unnao, Namit's systems consistently deliver. Learn more about our story, equipment, and locations on our <a href="about-us.html" class="text-brand-500 hover:underline font-bold">About page</a>.
+                                </p>
+                            </div>
+                            <a href="about-us.html" class="text-brand-500 text-xs font-bold hover:text-white transition-colors flex items-center gap-1.5 uppercase text-left">Read Gym Story <i class="fas fa-chevron-right text-[10px]"></i></a>
+                        </div>
+
+                        <div class="glass-card p-6 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-heading text-xl font-bold text-white mb-4">Follow on Instagram</h3>
+                                <p class="text-gray-400 text-xs leading-relaxed font-light mb-4">
+                                    Join Namit's online social community of athletes. Get daily diet tips, hypertrophy splits, client results, and gym news on his official handle <a href="https://instagram.com/namit_gupta/" target="_blank" class="text-brand-500 hover:underline font-bold">@namit_gupta</a>.
+                                </p>
+                            </div>
+                            <a href="https://instagram.com/namit_gupta/" target="_blank" class="bg-gray-900 border border-gray-800 text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 hover:bg-brand-500 hover:border-brand-500 transition-all w-fit">
+                                <i class="fab fa-instagram text-brand-500 text-sm"></i> @namit_gupta
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- CALL TO ACTION PACKAGES -->
+                    <div class="glass-card p-8 bg-black/60 border border-white/5 rounded-3xl relative overflow-hidden group">
+                        <div class="absolute -right-16 -top-16 w-32 h-32 bg-brand-500/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500"></div>
+                        <h3 class="font-heading text-2xl font-bold text-white mb-4">Book a Personal Coaching Consultation</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6 font-light">
+                            Ready to transform your lifestyle, repair PCOD/Thyroid, calculate custom intakes, and build your dream aesthetic? Select your mode (Online or Offline at Shuklaganj HQ/Subhash Nagar branch) and book your home demo or physical training slot now.
                         </p>
-                        <div>
-                            <a href="https://instagram.com/namit_gupta/" target="_blank" class="bg-gray-900 border border-gray-800 hover:border-gray-700 text-white px-6 py-3.5 rounded-full font-bold uppercase tracking-wider text-sm inline-flex items-center gap-2">
-                                <i class="fab fa-instagram text-lg text-brand-500"></i> Go to instagram.com/namit_gupta/
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://wa.me/919455606100" target="_blank" class="btn-glow text-white px-6 py-3 rounded-full font-bold uppercase tracking-wider text-xs inline-flex items-center gap-2">
+                                <i class="fab fa-whatsapp text-sm"></i> Book Demo Session
+                            </a>
+                            <a href="contact.html" class="bg-gray-900 border border-gray-800 text-gray-300 hover:text-white hover:bg-gray-800 px-6 py-3 rounded-full font-bold uppercase tracking-wider text-xs transition-colors">
+                                Send Inquiry Form
                             </a>
                         </div>
                     </div>

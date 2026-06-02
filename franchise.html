@@ -34,6 +34,36 @@
         .input-glass { width: 100%; background: rgba(20, 20, 20, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 12px 16px; color: #ffffff; transition: all 0.3s ease; }
         .input-glass:focus { outline: none; border-color: #ef4444; box-shadow: 0 0 15px rgba(239, 68, 68, 0.2); background: rgba(30, 30, 30, 0.8); }
         .input-glass::placeholder { color: #6b7280; }
+    
+        /* TOP ANNOUNCEMENT BAR SYSTEM */
+        .top-trial-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%);
+            color: #ffffff;
+            z-index: 10000;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .top-trial-bar .cta:hover {
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            transform: scale(1.03);
+        }
+        @media (max-width: 768px) {
+            .top-trial-bar { height: 56px; }
+            body { padding-top: 56px !important; }
+            #navbar { top: 56px !important; }
+        }
+        @media (min-width: 769px) {
+            body { padding-top: 48px !important; }
+            #navbar { top: 48px !important; }
+        }
+
     </style>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -103,6 +133,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 </head>
 <body class="antialiased font-sans flex flex-col min-h-screen">
+
+    <!-- TOP ANNOUNCEMENT BAR START -->
+    <div class="top-trial-bar" role="region" aria-label="Free trial banner">
+        <div class="container flex justify-between items-center w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="text-xs sm:text-sm font-black tracking-wide uppercase flex items-center gap-2">
+                <span class="bg-white/10 px-2 py-0.5 rounded text-[10px] text-white animate-pulse font-black">VIP PASS</span>
+                <span class="truncate">🔥 FREE 1-DAY TRIAL &amp; HOME DEMO — 100% Guaranteed Training!</span>
+            </div>
+            <a href="https://wa.me/919455606100" target="_blank" class="cta text-xs sm:text-sm font-bold bg-white text-brand-600 hover:bg-gray-100 px-4 py-1.5 rounded-full transition-all duration-300 shadow-md whitespace-nowrap uppercase tracking-wider shrink-0">Claim Pass</a>
+        </div>
+    </div>
+    <!-- TOP ANNOUNCEMENT BAR END -->
+
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDZ834XR"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -131,6 +174,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <div class="absolute left-0 mt-2 w-48 rounded-xl shadow-lg bg-gray-900 border border-gray-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden">
                                 <a href="classes.html" class="block px-4 py-3 text-sm text-gray-300 hover:text-brand-500 hover:bg-gray-800">All Classes</a>
                                 <a href="class-timetable.html" class="block px-4 py-3 text-sm text-gray-300 hover:text-brand-500 hover:bg-gray-800">Timetable</a>
+                                <a href="female-trainers.html" class="block px-4 py-3 text-sm text-gray-300 hover:text-brand-500 hover:bg-gray-800">Ladies Coaching &amp; PT</a>
                             </div>
                         </div>
                         <div class="relative group">
@@ -231,50 +275,257 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <main class="flex-grow pt-32 pb-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h1 class="font-heading text-4xl md:text-5xl font-black text-white mb-4">OWN AN <span class="text-brand-500">ULTRA FITNESS</span></h1>
-                <p class="text-gray-400 max-w-2xl mx-auto text-lg">Partner with a proven business model in the booming fitness industry. Bring premium, aesthetic-driven gyms to your city.</p>
+            <!-- Hero Header -->
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-brand-500 font-heading font-black text-sm uppercase tracking-widest bg-brand-900/30 px-4 py-2 rounded-full border border-brand-500/20 animate-pulse">Franchise Partnership</span>
+                <h1 class="font-heading text-4xl md:text-6xl font-black text-white mt-4 mb-6">OWN AN <span class="text-brand-500">ULTRA FITNESS</span> FRANCHISE</h1>
+                <p class="text-gray-400 max-w-3xl mx-auto text-lg md:text-xl leading-relaxed">
+                    Partner with the fastest-growing premium gym chain in Uttar Pradesh. Leverage our high-margin operating model, unmatched local branding, and world-class biomechanical facilities to launch a profitable business.
+                </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-                <div class="glass-card overflow-hidden">
-                    <img src="./assets/own_franchise.jpg" alt="Best gym frnachise in unnao " class="w-full h-full object-cover min-h-[400px]">
+            <!-- Hero Split Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20 items-start">
+                <!-- Left Column: Intro & Key Metrics Dashboard -->
+                <div class="lg:col-span-7 space-y-8" data-aos="fade-right">
+                    <div class="glass-card p-8 border border-white/5 bg-gradient-to-br from-gray-900/50 to-black">
+                        <h3 class="text-2xl font-heading font-bold text-white mb-4">The Premium Fitness Wave in UP</h3>
+                        <p class="text-gray-300 leading-relaxed mb-6">
+                            Under the direct personal brand and 10+ years of clinical expertise of owner **Namit Gupta**, Ultra Fitness Gym has evolved from a single powerhouse into a prominent multi-branch network. With over **500+ successful physical transformations** across our **Rajdhani Marg HQ (PIN 209862)** and **Subhash Nagar Branch (PIN 209861)**, our gyms are recognized as local hubs for elite performance, aesthetic setups, and results-backed workouts.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            By joining the Ultra Fitness family, you aren't just opening a gym — you are establishing an elite landmark equipped with bio-mechanically superior Hammer Strength machines, specialized ladies toning programs, and certified expert trainers.
+                        </p>
+                    </div>
+
+                    <!-- Metrics Grid -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="glass-card p-6 border-l-4 border-l-brand-500 bg-gray-900/30">
+                            <span class="text-gray-400 text-xs uppercase tracking-wider block mb-1">Space Required</span>
+                            <span class="text-white text-xl sm:text-2xl font-heading font-black">3,000 - 5,000</span>
+                            <span class="text-brand-500 text-xs font-semibold block">Sq. Ft. Carpet Area</span>
+                        </div>
+                        <div class="glass-card p-6 border-l-4 border-l-brand-500 bg-gray-900/30">
+                            <span class="text-gray-400 text-xs uppercase tracking-wider block mb-1">Total Setup Cost</span>
+                            <span class="text-white text-xl sm:text-2xl font-heading font-black">₹50L - ₹1.5Cr</span>
+                            <span class="text-brand-500 text-xs font-semibold block">Turnkey Setup Investment</span>
+                        </div>
+                        <div class="glass-card p-6 border-l-4 border-l-brand-500 bg-gray-900/30">
+                            <span class="text-gray-400 text-xs uppercase tracking-wider block mb-1">Payback Period</span>
+                            <span class="text-white text-xl sm:text-2xl font-heading font-black">18 - 24 Months</span>
+                            <span class="text-brand-500 text-xs font-semibold block">Proven ROI Timeline</span>
+                        </div>
+                        <div class="glass-card p-6 border-l-4 border-l-brand-500 bg-gray-900/30">
+                            <span class="text-gray-400 text-xs uppercase tracking-wider block mb-1">Operating Margins</span>
+                            <span class="text-white text-xl sm:text-2xl font-heading font-black">35% - 45%</span>
+                            <span class="text-brand-500 text-xs font-semibold block">High-Margin Net Profit</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="glass-card p-8">
-                    <h3 class="text-2xl font-bold mb-6 border-b border-gray-700 pb-4">Franchise Inquiry Form</h3>
-                    <form class="space-y-6" id="franchiseForm">
-                         <input type="hidden" name="formType" value="franchise">
-                         <input type="text" name="website_honeypot" style="display:none !important;" tabindex="-1" autocomplete="off">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-400 mb-2">Full Name</label>
-                            <input type="text" class="input-glass" placeholder="John Doe" name="name">
-                        </div>
-                        <div class="grid grid-cols-2 gap-4">
+
+                <!-- Right Column: Form -->
+                <div class="lg:col-span-5" data-aos="fade-left">
+                    <div class="glass-card p-8 bg-gradient-to-b from-gray-900 to-black border border-brand-500/20 relative overflow-hidden shadow-2xl">
+                        <div class="absolute -right-16 -top-16 w-32 h-32 bg-brand-500/10 rounded-full blur-3xl"></div>
+                        <h3 class="text-2xl font-heading font-black text-white mb-2 tracking-wide uppercase">Franchise Inquiry</h3>
+                        <p class="text-gray-400 text-sm mb-6 border-b border-gray-800 pb-4">Fill out the secure application form below. Namit Gupta &amp; our expansion team will contact you within 24 hours.</p>
+                        
+                        <form class="space-y-5" id="franchiseForm">
+                            <input type="hidden" name="formType" value="franchise">
+                            <input type="text" name="website_honeypot" style="display:none !important;" tabindex="-1" autocomplete="off">
+                            
                             <div>
-                                <label class="block text-sm font-medium text-gray-400 mb-2">Phone</label>
-                                <input type="tel" class="input-glass" placeholder="+91..." name="phone">
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Full Name <span class="text-brand-500">*</span></label>
+                                <input type="text" class="input-glass" placeholder="Your Name" name="name" required>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-400 mb-2">Phone Number <span class="text-brand-500">*</span></label>
+                                    <input type="tel" class="input-glass" placeholder="+91..." name="phone" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-400 mb-2">Email Address <span class="text-brand-500">*</span></label>
+                                    <input type="email" class="input-glass" placeholder="name@email.com" name="email" required>
+                                </div>
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-gray-400 mb-2">Email</label>
-                                <input type="email" class="input-glass" placeholder="john@example.com" name="email">
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Target Location / City <span class="text-brand-500">*</span></label>
+                                <input type="text" class="input-glass" placeholder="e.g. Kanpur, Unnao, Lucknow" name="location" required>
                             </div>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-400 mb-2">City of Interest</label>
-                            <input type="text" class="input-glass" placeholder="Your City" name="location">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-400 mb-2">Investment Capital Available</label>
-                            <select class="input-glass" name="investment">
-                                <option>₹50L - ₹1Cr</option>
-                                <option>₹1Cr - ₹2Cr</option>
-                                <option>₹2Cr+</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn-glow w-full text-white px-6 py-4 rounded-lg font-bold uppercase tracking-wide">Submit Inquiry</button>
-                    </form>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Investment Capital Available <span class="text-brand-500">*</span></label>
+                                <select class="input-glass" name="investment" required>
+                                    <option value="" disabled selected>Select Budget Range</option>
+                                    <option>₹50L - ₹1Cr (Premium Setup)</option>
+                                    <option>₹1Cr - ₹2Cr (Elite Setup)</option>
+                                    <option>₹2Cr+ (Mega Center)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="pt-2">
+                                <button type="submit" class="btn-glow w-full text-white px-6 py-4 rounded-xl font-bold uppercase tracking-wider text-sm flex items-center justify-center gap-2">
+                                    <span>Submit Franchise Application</span>
+                                    <i class="fas fa-paper-plane text-xs"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
+
+            <!-- Red line divider -->
+            <div class="h-px bg-gradient-to-r from-transparent via-brand-500/20 to-transparent my-16"></div>
+
+            <!-- Why Partner with Ultra Fitness — The Brand Advantage -->
+            <div class="mb-20" data-aos="fade-up">
+                <div class="text-center mb-12">
+                    <h2 class="font-heading text-3xl md:text-4xl font-black text-white uppercase tracking-wider">Why Partner with Ultra Fitness — The Brand Advantage</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto mt-2 text-sm md:text-base">We have optimized every operational metric to maximize profitability and deliver consistent growth.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="glass-card p-6 bg-gradient-to-b from-gray-900/30 to-black flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-500 mb-4 text-xl">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2">Founder's Influence</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed font-sans">Namit Gupta's 10+ years of active training reputation and elite clinical nutrition expertise drive organic confidence and high local search volume, reducing your paid marketing spend.</p>
+                        </div>
+                    </div>
+                    <div class="glass-card p-6 bg-gradient-to-b from-gray-900/30 to-black flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-500 mb-4 text-xl">
+                                <i class="fas fa-dumbbell"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2">Hammer Strength Edge</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed font-sans">Our centers feature heavy-duty commercial equipment engineered for biomechanical precision. Serious bodybuilders and lifestyle gym-goers choose us for superior training quality.</p>
+                        </div>
+                    </div>
+                    <div class="glass-card p-6 bg-gradient-to-b from-gray-900/30 to-black flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-500 mb-4 text-xl">
+                                <i class="fas fa-venus"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2">Dedicated Ladies Portal</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed font-sans">Unlock a secondary revenue stream by integrating our custom-tailored female coaching program. Verified safety, certified female fitness coordinators, and secure slots maximize female sign-ups.</p>
+                        </div>
+                    </div>
+                    <div class="glass-card p-6 bg-gradient-to-b from-gray-900/30 to-black flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-500 mb-4 text-xl">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2">Optimized Economics</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed font-sans">A lean operational cost structure combined with dynamic monthly membership plans and co-ed group batches guarantees rapid local market penetration and outstanding net margins.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Red line divider -->
+            <div class="h-px bg-gradient-to-r from-transparent via-brand-500/20 to-transparent my-16"></div>
+
+            <!-- Franchise Investment & Tier Requirements -->
+            <div class="mb-20" data-aos="fade-up">
+                <div class="text-center mb-12">
+                    <h2 class="font-heading text-3xl md:text-4xl font-black text-white uppercase tracking-wider">Franchise Investment &amp; Tier Requirements</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto mt-2 text-sm md:text-base">Review our core setup specifications and operational models designed for scalable success.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Tier 1 -->
+                    <div class="glass-card p-8 bg-gradient-to-br from-gray-900/40 via-black to-gray-900/40 border border-brand-500/20 relative">
+                        <div class="absolute top-4 right-4 bg-brand-500/20 border border-brand-500/30 text-brand-500 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider">Elite Tier</div>
+                        <h3 class="text-2xl font-bold text-white mb-4 font-heading">Elite Gym &amp; Performance Center</h3>
+                        <p class="text-gray-400 text-sm mb-6">Designed for metropolitan centers or main commercial hubs seeking to establish a dominant fitness experience.</p>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-6 font-sans">
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-brand-500 text-base"></i> <span><strong>Space Requirement:</strong> 4,000 - 5,000 Sq. Ft. Carpet Area</span></li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-brand-500 text-base"></i> <span><strong>Investment:</strong> ₹1 Crore - ₹1.5 Crore (Estimated setup cost)</span></li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-brand-500 text-base"></i> <span><strong>Amenities:</strong> Biomechanical Hammer Strength stations, dedicated heavy lifting racks, spin class arena, lockers &amp; steam showers.</span></li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-brand-500 text-base"></i> <span><strong>Bonus Assets:</strong> In-house Vidamin supplement kiosk, functional HIIT cross-training turf, and direct clinical nutrition consult desks.</span></li>
+                        </ul>
+                        <div class="border-t border-gray-800 pt-4 flex justify-between items-center font-sans">
+                            <span class="text-gray-400 text-xs uppercase">Target Payback</span>
+                            <span class="text-white font-bold text-base">18 - 22 Months</span>
+                        </div>
+                    </div>
+
+                    <!-- Tier 2 -->
+                    <div class="glass-card p-8 bg-gradient-to-br from-gray-900/40 via-black to-gray-900/40 border border-white/5 relative">
+                        <div class="absolute top-4 right-4 bg-white/10 border border-white/10 text-white px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider">Premium Tier</div>
+                        <h3 class="text-2xl font-bold text-white mb-4 font-heading">Premium Strength &amp; Toning Studio</h3>
+                        <p class="text-gray-400 text-sm mb-6">Ideally suited for Tier-2 cities or developing sub-districts seeking high-quality fitness with rapid market adoption.</p>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-6 font-sans">
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-brand-500 text-base"></i> <span><strong>Space Requirement:</strong> 3,000 - 4,000 Sq. Ft. Carpet Area</span></li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-brand-500 text-base"></i> <span><strong>Investment:</strong> ₹50 Lakhs - ₹1 Crore (Estimated setup cost)</span></li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-brand-500 text-base"></i> <span><strong>Amenities:</strong> Complete co-ed strength layout, cardio rows, dynamic dumbbell racks, safe female training slots, and locker systems.</span></li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-brand-500 text-base"></i> <span><strong>Bonus Assets:</strong> Dedicated client assessment rooms, local brand partnerships, and full home coaching onboarding.</span></li>
+                        </ul>
+                        <div class="border-t border-gray-800 pt-4 flex justify-between items-center font-sans">
+                            <span class="text-gray-400 text-xs uppercase">Target Payback</span>
+                            <span class="text-white font-bold text-base">20 - 24 Months</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Red line divider -->
+            <div class="h-px bg-gradient-to-r from-transparent via-brand-500/20 to-transparent my-16"></div>
+
+            <!-- Step-by-Step Launch & Growth Support -->
+            <div class="mb-8" data-aos="fade-up">
+                <div class="text-center mb-12">
+                    <h2 class="font-heading text-3xl md:text-4xl font-black text-white uppercase tracking-wider">Step-by-Step Launch &amp; Growth Support</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto mt-2 text-sm md:text-base">We don't just hand over a name — we guide your location from the blueprint phase to ongoing local dominance.</p>
+                </div>
+                <div class="relative pl-6 md:pl-0 border-l border-brand-500/30 md:border-l-0 md:grid md:grid-cols-4 md:gap-8">
+                    
+                    <!-- Support Step 1 -->
+                    <div class="relative md:text-center mb-8 md:mb-0">
+                        <!-- Dot on timeline -->
+                        <div class="absolute -left-[31px] md:left-1/2 md:-translate-x-1/2 -top-1 w-4 h-4 bg-brand-500 rounded-full border-4 border-black z-10"></div>
+                        <div class="md:pt-6">
+                            <span class="text-brand-500 font-heading font-black text-xs uppercase tracking-wider">Phase 01</span>
+                            <h4 class="text-lg font-bold text-white mt-1 mb-2 font-heading">Location &amp; Blueprint</h4>
+                            <p class="text-gray-400 text-xs leading-relaxed max-w-xs md:mx-auto font-sans">Detailed local demographic mapping, professional layout planning, optimal ventilation setups, and structural acoustics design.</p>
+                        </div>
+                    </div>
+
+                    <!-- Support Step 2 -->
+                    <div class="relative md:text-center mb-8 md:mb-0">
+                        <!-- Dot on timeline -->
+                        <div class="absolute -left-[31px] md:left-1/2 md:-translate-x-1/2 -top-1 w-4 h-4 bg-brand-500 rounded-full border-4 border-black z-10"></div>
+                        <div class="md:pt-6">
+                            <span class="text-brand-500 font-heading font-black text-xs uppercase tracking-wider">Phase 02</span>
+                            <h4 class="text-lg font-bold text-white mt-1 mb-2 font-heading">Imported Equipment</h4>
+                            <p class="text-gray-400 text-xs leading-relaxed max-w-xs md:mx-auto font-sans">Direct commercial importer pricing negotiations on high-durability plate-loaded Hammer Strength sets, structural cables, and premium rubber floors.</p>
+                        </div>
+                    </div>
+
+                    <!-- Support Step 3 -->
+                    <div class="relative md:text-center mb-8 md:mb-0">
+                        <!-- Dot on timeline -->
+                        <div class="absolute -left-[31px] md:left-1/2 md:-translate-x-1/2 -top-1 w-4 h-4 bg-brand-500 rounded-full border-4 border-black z-10"></div>
+                        <div class="md:pt-6">
+                            <span class="text-brand-500 font-heading font-black text-xs uppercase tracking-wider">Phase 03</span>
+                            <h4 class="text-lg font-bold text-white mt-1 mb-2 font-heading">Pre-Sales Mastery</h4>
+                            <p class="text-gray-400 text-xs leading-relaxed max-w-xs md:mx-auto font-sans">Deploying our signature digital and local marketing pre-sales blueprint, engineered to guarantee **100+ active premium members** before day one!</p>
+                        </div>
+                    </div>
+
+                    <!-- Support Step 4 -->
+                    <div class="relative md:text-center mb-0">
+                        <!-- Dot on timeline -->
+                        <div class="absolute -left-[31px] md:left-1/2 md:-translate-x-1/2 -top-1 w-4 h-4 bg-brand-500 rounded-full border-4 border-black z-10"></div>
+                        <div class="md:pt-6">
+                            <span class="text-brand-500 font-heading font-black text-xs uppercase tracking-wider">Phase 04</span>
+                            <h4 class="text-lg font-bold text-white mt-1 mb-2 font-heading">Ongoing Lead-Gen</h4>
+                            <p class="text-gray-400 text-xs leading-relaxed max-w-xs md:mx-auto font-sans">Complete operational staff training, local organic SEO optimization, customized Facebook &amp; Google Ads pipelines, and direct support audit calls.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
         </div>
     </main>
         <!-- FOOTER START -->

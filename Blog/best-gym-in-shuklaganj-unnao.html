@@ -187,6 +187,36 @@
             border-radius: 0 1rem 1rem 0;
             font-style: italic;
         }
+    
+        /* TOP ANNOUNCEMENT BAR SYSTEM */
+        .top-trial-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%);
+            color: #ffffff;
+            z-index: 10000;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .top-trial-bar .cta:hover {
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            transform: scale(1.03);
+        }
+        @media (max-width: 768px) {
+            .top-trial-bar { height: 56px; }
+            body { padding-top: 56px !important; }
+            #navbar { top: 56px !important; }
+        }
+        @media (min-width: 769px) {
+            body { padding-top: 48px !important; }
+            #navbar { top: 48px !important; }
+        }
+
     </style>
 
     <script type="application/ld+json">
@@ -212,12 +242,25 @@
       "dateModified": "2026-05-22",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://ultrafitnessgyms.com/Blog/best-gym-in-shuklaganj-unnao.html"
+        "@id": "https://ultrafitnessgyms.com/blog/best-gym-in-shuklaganj-unnao.html"
       }
     }
     </script>
 </head>
 <body class="antialiased font-sans flex flex-col min-h-screen">
+
+    <!-- TOP ANNOUNCEMENT BAR START -->
+    <div class="top-trial-bar" role="region" aria-label="Free trial banner">
+        <div class="container flex justify-between items-center w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="text-xs sm:text-sm font-black tracking-wide uppercase flex items-center gap-2">
+                <span class="bg-white/10 px-2 py-0.5 rounded text-[10px] text-white animate-pulse font-black">VIP PASS</span>
+                <span class="truncate">🔥 FREE 1-DAY TRIAL &amp; HOME DEMO — 100% Guaranteed Training!</span>
+            </div>
+            <a href="https://wa.me/919455606100" target="_blank" class="cta text-xs sm:text-sm font-bold bg-white text-brand-600 hover:bg-gray-100 px-4 py-1.5 rounded-full transition-all duration-300 shadow-md whitespace-nowrap uppercase tracking-wider shrink-0">Claim Pass</a>
+        </div>
+    </div>
+    <!-- TOP ANNOUNCEMENT BAR END -->
+
     
     <div id="vanta-bg"></div>
 
@@ -246,6 +289,7 @@
                             <div class="absolute left-0 mt-2 w-48 rounded-xl shadow-lg bg-gray-900 border border-gray-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[99999] overflow-visible">
                                 <a href="../classes.html" class="block px-4 py-3 text-sm text-gray-300 hover:text-brand-500 hover:bg-gray-800">All Classes</a>
                                 <a href="../class-timetable.html" class="block px-4 py-3 text-sm text-gray-300 hover:text-brand-500 hover:bg-gray-800">Timetable</a>
+                                <a href="../female-trainers.html" class="block px-4 py-3 text-sm text-gray-300 hover:text-brand-500 hover:bg-gray-800">Ladies Coaching &amp; PT</a>
                             </div>
                         </div>
                         <div class="relative group" style="overflow: visible !important;">
