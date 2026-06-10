@@ -407,6 +407,116 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </footer>
     <!-- FOOTER END -->
+     <div id="exit-intent-modal" style="display: none; position: fixed; inset: 0; z-index: 999999; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;">
+    <div style="background: #0d0d0d; border: 2px solid rgba(239, 68, 68, 0.4); border-radius: 20px; padding: 40px 30px; max-width: 450px; width: 90%; text-align: center; box-shadow: 0 0 30px rgba(239, 68, 68, 0.25); position: relative; transform: scale(0.9); transition: transform 0.3s ease; font-family: 'Inter', sans-serif;">
+        <!-- Close Button -->
+        <button id="close-exit-modal" style="position: absolute; top: 15px; right: 20px; background: transparent; border: none; color: #a0a0a0; font-size: 24px; cursor: pointer; transition: color 0.2s;" onmouseover="this.style.color='#ef4444'" onmouseout="this.style.color='#a0a0a0'">&times;</button>
+        
+        <!-- Icon -->
+        <div style="width: 70px; height: 70px; background: rgba(239, 68, 68, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; border: 1px solid rgba(239, 68, 68, 0.3);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"></line><circle cx="6.5" cy="6.5" r="2.5"></circle><circle cx="17.5" cy="17.5" r="2.5"></circle></svg>
+        </div>
+        
+        <!-- Heading -->
+        <h3 style="font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 900; color: #ffffff; margin: 0 0 10px; text-transform: uppercase; letter-spacing: 1px;">Wait! Don't Go...</h3>
+        <h4 style="font-size: 18px; color: #ef4444; font-weight: 700; margin: 0 0 15px; text-transform: uppercase; letter-spacing: 0.5px;">Exclusive Exit Offer</h4>
+        
+        <!-- Text -->
+        <p style="color: #cccccc; font-size: 15px; line-height: 1.6; margin: 0 0 25px; font-weight: 300;">
+            Claim an exclusive discount of <strong style="color: #ffffff; font-weight: 700;">up to ₹1,000</strong> on your membership fees! Start training at Shuklaganj's premium fitness gym.
+        </p>
+        
+        <!-- CTA Buttons -->
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="https://wa.me/919455606100?text=Hi!%20I%20was%20leaving%20the%20website%20and%20saw%20the%20exit%20discount%20offer.%20I%20want%20to%20claim%20up%20to%20%E2%82%B91,000%20off%20on%20my%20gym%20fees!" target="_blank" id="claim-exit-discount" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: #ffffff; padding: 14px 20px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 15px; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s; box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4); display: block;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(239, 68, 68, 0.6)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(239, 68, 68, 0.4)'">
+                Claim My Discount
+            </a>
+            <button id="no-thanks-exit-modal" style="background: transparent; border: none; color: #888888; font-size: 13px; text-decoration: underline; cursor: pointer; padding: 5px; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#888888'">No thanks, I'll pay full price</button>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    function setCookie(name, value, minutes) {
+        var expires = "";
+        if (minutes) {
+            var date = new Date();
+            date.setTime(date.getTime() + (minutes * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    if (getCookie("ufg_exit_modal_shown")) {
+        return;
+    }
+
+    var modal = document.getElementById("exit-intent-modal");
+    if (!modal) return;
+    var modalContent = modal.querySelector("div");
+    var closeBtn = document.getElementById("close-exit-modal");
+    var noThanksBtn = document.getElementById("no-thanks-exit-modal");
+    var claimBtn = document.getElementById("claim-exit-discount");
+
+    function showModal() {
+        if (getCookie("ufg_exit_modal_shown")) return;
+        
+        modal.style.display = "flex";
+        modal.offsetHeight;
+        modal.style.opacity = "1";
+        modalContent.style.transform = "scale(1)";
+        
+        setCookie("ufg_exit_modal_shown", "true", 10);
+    }
+
+    function hideModal() {
+        modal.style.opacity = "0";
+        modalContent.style.transform = "scale(0.9)";
+        setTimeout(function() {
+            modal.style.display = "none";
+        }, 300);
+    }
+
+    var isReady = false;
+    setTimeout(function() {
+        isReady = true;
+    }, 5000);
+
+    document.addEventListener("mouseleave", function(e) {
+        if (!isReady) return;
+        showModal();
+    });
+
+    document.addEventListener("visibilitychange", function() {
+        if (!isReady) return;
+        if (document.visibilityState === 'hidden') {
+            showModal();
+        }
+    });
+
+    if (closeBtn) closeBtn.addEventListener("click", hideModal);
+    if (noThanksBtn) noThanksBtn.addEventListener("click", hideModal);
+    if (claimBtn) claimBtn.addEventListener("click", hideModal);
+    
+    modal.addEventListener("click", function(e) {
+        if (e.target === modal) {
+            hideModal();
+        }
+    });
+})();
+</script>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
