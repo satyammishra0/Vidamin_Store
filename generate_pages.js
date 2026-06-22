@@ -10,7 +10,7 @@ if (!headerMatch || !footerMatch) {
     process.exit(1);
 }
 
-const headerTemplate = headerMatch[1].replace(/<title>.*?<\/title>/, '<title>__TITLE__ | Ultra Fitness</title> <link rel="icon" type="image/x-icon" href="./assets/image.ico">');
+const headerTemplate = headerMatch[1].replace(/<title>.*?<\/title>/, '<title>__TITLE__ | Ultra Fitness</title>');
 const footerTemplate = footerMatch[0];
 
 const pages = [
