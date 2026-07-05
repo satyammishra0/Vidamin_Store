@@ -319,7 +319,12 @@ const pages = [
 ];
 
 pages.forEach(page => {
-    const fullHtml = headerTemplate.replace('__TITLE__', page.title) + page.content + footerTemplate;
+    // Inject analytics tracking script before </body>
+    const analyticsScript = '    <script src="/js/analytics-events.js" defer></script>\n';
+    let fullHtml = headerTemplate.replace('__TITLE__', page.title) + page.content + footerTemplate;
+    if (!fullHtml.includes('analytics-events.js')) {
+        fullHtml = fullHtml.replace('</body>', analyticsScript + '</body>');
+    }
     fs.writeFileSync(page.filename, fullHtml);
     console.log(`Created ${page.filename}`);
 });
