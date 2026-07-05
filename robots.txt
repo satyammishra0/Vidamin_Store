@@ -9,3 +9,4 @@ Allow: /favicon.ico
 Allow: /assets/
 
 Sitemap: https://ultrafitnessgyms.com/sitemap.xml
+Sitemap: https://ultrafitnessgyms.com/video-sitemap.xml

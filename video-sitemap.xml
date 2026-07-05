@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+    <!-- Video 1 -->
+    <url>
+        <loc>https://ultrafitnessgyms.com/blog/women-workout-videos-motivation.html</loc>
+        <video:video>
+            <video:title>Squat Progression</video:title>
+            <video:description>
+                Posterior chain alignment, building core and lumbar strength.
+            </video:description>
+            <video:thumbnail_loc>
+                https://ultrafitnessgyms.com/img/video-thumbnails/thumbnail-1.png
+            </video:thumbnail_loc>
+            <video:content_loc>
+                https://ultrafitnessgyms.com/videos/video_1.mp4
+            </video:content_loc>
+            <video:duration>13</video:duration>
+            <video:publication_date>2026-07-05T10:00:00+05:30</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+    </url>
+
+    <!-- Video 2 -->
+    <url>
+        <loc>https://ultrafitnessgyms.com/blog/women-workout-videos-motivation.html</loc>
+        <video:video>
+            <video:title>Medicine Ball Box Jump</video:title>
+            <video:description>
+                Explosive lower-body exercise using a medicine ball to improve leg power, coordination, balance, and athletic performance.
+            </video:description>
+            <video:thumbnail_loc>
+                https://ultrafitnessgyms.com/img/video-thumbnails/thmbnail-2.png
+            </video:thumbnail_loc>
+            <video:content_loc>
+                https://ultrafitnessgyms.com/videos/video_2.mp4
+            </video:content_loc>
+            <video:duration>29</video:duration>
+            <video:publication_date>2026-07-05T10:00:00+05:30</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+    </url>
+
+    <!-- Video 3 -->
+    <url>
+        <loc>https://ultrafitnessgyms.com/blog/women-workout-videos-motivation.html</loc>
+        <video:video>
+            <video:title>Battle Rope Waves</video:title>
+            <video:description>
+               High-intensity battle rope exercise that improves upper-body strength, endurance, shoulder stability, and cardiovascular fitness.
+            </video:description>
+            <video:thumbnail_loc>
+                https://ultrafitnessgyms.com/img/video-thumbnails/thumbnail-3.png
+            </video:thumbnail_loc>
+            <video:content_loc>
+                https://ultrafitnessgyms.com/videos/video_3.mp4
+            </video:content_loc>
+            <video:duration>16</video:duration>
+            <video:publication_date>2026-07-05T10:00:00+05:30</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+    </url>
+
+    <!-- Video 4 -->
+    <url>
+        <loc>https://ultrafitnessgyms.com/blog/women-workout-videos-motivation.html</loc>
+        <video:video>
+            <video:title>Standing Cable Wood Chop</video:title>
+            <video:description>
+                Core strengthening exercise using a cable machine to improve rotational power, balance, and oblique muscle activation.
+            </video:description>
+            <video:thumbnail_loc>
+                https://ultrafitnessgyms.com/img/video-thumbnails/thumbnail-4.png
+            </video:thumbnail_loc>
+            <video:content_loc>
+                https://ultrafitnessgyms.com/videos/video_4.mp4
+            </video:content_loc>
+            <video:duration>18</video:duration>
+            <video:publication_date>2026-07-05T10:00:00+05:30</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+    </url>
+
+    <!-- Video 5 -->
+    <url>
+        <loc>https://ultrafitnessgyms.com/blog/women-workout-videos-motivation.html</loc>
+        <video:video>
+            <video:title>Deadlift Pull</video:title>
+            <video:description>
+                Posterior chain alignment, building core and lumbar strength.
+            </video:description>
+            <video:thumbnail_loc>
+                https://ultrafitnessgyms.com/img/video-thumbnails/thumbnail-5.png
+            </video:thumbnail_loc>
+            <video:content_loc>
+                https://ultrafitnessgyms.com/videos/video_5.mp4
+            </video:content_loc>
+            <video:duration>15</video:duration>
+            <video:publication_date>2026-07-05T10:00:00+05:30</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+    </url>
+
+    <!-- Video 6 -->
+    <url>
+        <loc>https://ultrafitnessgyms.com/blog/women-workout-videos-motivation.html</loc>
+        <video:video>
+            <video:title>Pull up</video:title>
+            <video:description>Widening lat activation and enhancing overhead vertical pull power</video:description>
+            <video:thumbnail_loc>https://ultrafitnessgyms.com/img/video-thumbnails/thumbnail-6.png</video:thumbnail_loc>
+            <video:content_loc>https://ultrafitnessgyms.com/videos/video_6.mp4</video:content_loc>
+            <video:duration>17</video:duration>
+            <video:publication_date>2026-07-05T10:00:00+05:30</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+    </url>
+
+    <!-- Video 7 -->
+    <url>
+        <loc>https://ultrafitnessgyms.com/blog/women-workout-videos-motivation.html</loc>
+        <video:video>
+            <video:title>Push ups</video:title>
+            <video:description>Master the classic push-up to build chest, shoulder, triceps, and core strength while improving upper-body endurance and stability.</video:description>
+            <video:thumbnail_loc>https://ultrafitnessgyms.com/img/video-thumbnails/thumbnail-7.png</video:thumbnail_loc>
+            <video:content_loc>https://ultrafitnessgyms.com/videos/video_7.mp4</video:content_loc>
+            <video:duration>14</video:duration>
+            <video:publication_date>2026-07-05T10:00:00+05:30</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+    </url>
+
+    <!-- Video 8 -->
+    <url>
+        <loc>https://ultrafitnessgyms.com/blog/women-workout-videos-motivation.html</loc>
+        <video:video>
+            <video:title>Incline Push-Up</video:title>
+            <video:description>Beginner-friendly push-up variation performed on an elevated surface to strengthen the chest, shoulders, triceps, and core with reduced resistance </video:description>
+            <video:thumbnail_loc>https://ultrafitnessgyms.com/img/video-thumbnails/thumbnail-8.png</video:thumbnail_loc>
+            <video:content_loc>https://ultrafitnessgyms.com/videos/video_8.mp4</video:content_loc>
+            <video:duration>18</video:duration>
+            <video:publication_date>2026-07-05T10:00:00+05:30</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+    </url>
+
+    <!-- Video 9 -->
+    <url>
+        <loc>https://ultrafitnessgyms.com/blog/women-workout-videos-motivation.html</loc>
+        <video:video>
+            <video:title>Wide Grip Push-Up </video:title>
+            <video:description>Push-up variation targeting the chest, shoulders, and triceps while improving upper-body strength, stability, and muscular endurance.</video:description>
+            <video:thumbnail_loc>https://ultrafitnessgyms.com/img/video-thumbnails/thumbnail-9.png</video:thumbnail_loc>
+            <video:content_loc>https://ultrafitnessgyms.com/videos/video_9.mp4</video:content_loc>
+            <video:duration>10</video:duration>
+            <video:publication_date>2026-07-05T10:00:00+05:30</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+    </url>
+
+    <!-- Video 10 -->
+    <url>
+        <loc>https://ultrafitnessgyms.com/blog/women-workout-videos-motivation.html</loc>
+        <video:video>
+            <video:title>Pull-Up</video:title>
+            <video:description>Bodyweight pulling exercise that develops back, shoulder, biceps, and grip strength while improving upper-body power and control.</video:description>
+            <video:thumbnail_loc>https://ultrafitnessgyms.com/img/video-thumbnails/thumbnail-10.png</video:thumbnail_loc>
+            <video:content_loc>https://ultrafitnessgyms.com/videos/video_10.mp4</video:content_loc>
+            <video:duration>12</video:duration>
+            <video:publication_date>2026-07-05T10:00:00+05:30</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+    </url>
+
+    <!-- Video 11 -->
+    <url>
+        <loc>https://ultrafitnessgyms.com/blog/women-workout-videos-motivation.html</loc>
+        <video:video>
+            <video:title>Push-Up</video:title>
+            <video:description>Beginner-friendly push-up variation performed on an elevated surface to strengthen the chest, shoulders, triceps, and core with reduced resistance </video:description>
+            <video:thumbnail_loc>https://ultrafitnessgyms.com/img/video-thumbnails/thumbnail-11.png</video:thumbnail_loc>
+            <video:content_loc>https://ultrafitnessgyms.com/videos/video_11.mp4</video:content_loc>
+            <video:duration>5</video:duration>
+            <video:publication_date>2026-07-05T10:00:00+05:30</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+    </url>
+
+    <!-- Video 12 -->
+    <url>
+        <loc>https://ultrafitnessgyms.com/blog/women-workout-videos-motivation.html</loc>
+        <video:video>
+            <video:title>Barbell Shoulder Press</video:title>
+            <video:description>Compound shoulder exercise using a barbell to build deltoid strength, upper-body stability, and overhead pressing power.</video:description>
+            <video:thumbnail_loc>https://ultrafitnessgyms.com/img/video-thumbnails/thumbnail-12.png</video:thumbnail_loc>
+            <video:content_loc>https://ultrafitnessgyms.com/videos/video_12.mp4</video:content_loc>
+            <video:duration>22</video:duration>
+            <video:publication_date>2026-07-05T10:00:00+05:30</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+    </url>
+
+    <!-- Video 13 -->
+    <url>
+        <loc>https://ultrafitnessgyms.com/blog/women-workout-videos-motivation.html</loc>
+        <video:video>
+            <video:title>Barbell Back Squat</video:title>
+            <video:description>Fundamental lower-body strength exercise targeting the quadriceps, glutes, hamstrings, and core while improving balance and overall athletic performance.</video:description>
+            <video:thumbnail_loc>https://ultrafitnessgyms.com/img/video-thumbnails/thumbnail-13.png</video:thumbnail_loc>
+            <video:content_loc>https://ultrafitnessgyms.com/videos/video_13.mp4</video:content_loc>
+            <video:duration>41</video:duration>
+            <video:publication_date>2026-07-05T10:00:00+05:30</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+    </url>
+
+</urlset>
